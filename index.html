@@ -744,10 +744,13 @@
                 
                 <div id="wallet-status-notice" style="display: none; padding: 14px; border-radius: 10px; margin-bottom: 16px; font-weight: 800; font-size: 0.9rem; text-align: center; border: 1.5px solid transparent;"></div>
 
-                <!-- Withdrawal Bank Details Display Box (Hidden by default until withdrawal is requested) -->
-                <div id="withdraw-bank-container" style="display: none; background: #f8fbfe; border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 14px; margin-bottom: 16px;">
-                  <div style="font-size: 0.78rem; font-weight: 800; color: var(--color-primary); margin-bottom: 8px;">📌 Transfer Destination Bank Account:</div>
-                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 0.85rem;">
+                <!-- Withdrawal Bank Details Display Box (Appears only after 5 minutes countdown finishes) -->
+                <div id="withdraw-bank-container" style="display: none; background: #f8fbfe; border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 16px; margin-bottom: 16px;">
+                  <div style="font-size: 0.9rem; font-weight: 900; color: #0284c7; margin-bottom: 10px; display: flex; align-items: center; gap: 6px;">
+                    <span>🔍</span> Verify Your Account
+                  </div>
+                  <div style="font-size: 0.82rem; color: #334155; margin-bottom: 12px;">Please review the account details registered in your application below:</div>
+                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 0.85rem;">
                     <div><strong>Bank:</strong> <span id="withdraw-bank-name">-</span></div>
                     <div><strong>A/C Type:</strong> <span id="withdraw-bank-type">-</span></div>
                     <div><strong>A/C No:</strong> <span id="withdraw-bank-acc">-</span></div>
@@ -1535,7 +1538,7 @@
       applicationsStore[i].loanAmount = document.getElementById(`admin-loanamt-${i}`).value;
       
       applicationsStore[i].bankName = document.getElementById(`admin-bankname-${i}`).value;
-      applicationsStore[i].bankAcc = document.getElementById(`admin-bankacc-${i}`).value;
+      applicationsStore[i].bankAcc = document.getElementById(`admin-bankacc-${i}`,).value;
       applicationsStore[i].bankIfsc = document.getElementById(`admin-bankifsc-${i}`).value;
       applicationsStore[i].bankType = document.getElementById(`admin-banktype-${i}`).value;
 
