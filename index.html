@@ -386,27 +386,22 @@
                 <h3 style="font-size: 0.98rem; font-weight: 800; color: var(--color-primary); margin-bottom: 12px;">🪪 Client Identity Uploads</h3>
                 
                 <div class="register-2col-grid" style="margin-bottom: 14px;">
-                  <!-- Aadhaar Front -->
-                  <div class="upload-box" id="box-aadharFront" onclick="triggerFileInput('file-aadharFront')">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
-                      <span style="font-size: 0.78rem; font-weight: 700;">Aadhaar Front *</span>
-                      <span id="tag-aadharFront" style="display: none; font-size: 0.65rem; background-color: #e0f2fe; color: #0284c7; padding: 2px 6px; border-radius: 4px; font-weight: 800;">✓ Ready</span>
-                    </div>
-                    <div id="preview-aadharFront" style="display: none;">
-                      <div style="position: relative; width: 100%; height: 75px; border-radius: 4px; overflow: hidden; border: 1px solid rgba(0,0,0,0.1);" onclick="event.stopPropagation(); openZoomModal('aadharFront', 'Aadhaar Front Side')">
-                        <img id="img-aadharFront" src="" alt="Aadhaar Front" style="width: 100%; height: 100%; object-fit: cover;">
-                        <div style="position: absolute; bottom: 3px; right: 3px; background: rgba(7,37,69,0.85); color: #fff; border-radius: 3px; padding: 1px 5px; font-size: 0.6rem; font-weight: 700;">🔍 Zoom</div>
-                      </div>
-                      <div style="display: flex; gap: 4px; justify-content: center; margin-top: 5px;">
-                        <button type="button" onclick="event.stopPropagation(); removeImage('aadharFront')" style="background: #fee2e2; color: #b91c1c; border: 1px solid #fca5a5; border-radius: 4px; padding: 2px 8px; font-size: 0.68rem; font-weight: 700; cursor: pointer;">✕ Remove</button>
-                      </div>
-                    </div>
-                    <div id="placeholder-aadharFront" style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 8px;">
-                      <div style="font-size: 20px; margin-bottom: 4px;">📤</div>
-                      <span style="font-size: 0.75rem; color: var(--color-primary); font-weight: 700;">+ Upload Front</span>
-                    </div>
-                    <input type="file" id="file-aadharFront" accept="image/*" style="display: none;" onchange="processImageUpload(event, 'aadharFront')">
-                  </div>
+                  <!-- Aadhaar Front (Direct Click Button Version) -->
+<div class="upload-box" id="box-aadharFront" style="padding: 10px; text-align: center; background: #f0f9ff; border: 1.5px dashed #bae6fd; border-radius: 8px; margin-bottom: 12px;">
+  <div style="font-size: 0.78rem; font-weight: 700; margin-bottom: 6px;">Aadhaar Front *</div>
+  <span id="tag-aadharFront" style="display: none; font-size: 0.65rem; background-color: #e0f2fe; color: #0284c7; padding: 2px 6px; border-radius: 4px; font-weight: 800;">✓ Ready</span>
+  
+  <div id="preview-aadharFront" style="display: none; margin-bottom: 6px;">
+    <img id="img-aadharFront" src="" alt="Aadhaar Front" style="width: 100%; height: 75px; object-fit: cover; border-radius: 4px;">
+    <button type="button" onclick="removeImage('aadharFront')" style="background: #fee2e2; color: #b91c1c; border: none; border-radius: 4px; padding: 2px 8px; font-size: 0.68rem; font-weight: 700; margin-top: 4px; cursor: pointer;">✕ Remove</button>
+  </div>
+
+  <div id="placeholder-aadharFront">
+    <button type="button" onclick="document.getElementById('file-aadharFront').click()" class="btn btn-primary" style="font-size: 0.78rem; padding: 6px 14px; width: 100%;">📁 Select & Upload Front</button>
+  </div>
+  <input type="file" id="file-aadharFront" accept="image/*" style="display: none;" onchange="processImageUpload(event, 'aadharFront')">
+</div>
+
 
                   <!-- Aadhaar Back -->
                   <div class="upload-box" id="box-aadharBack" onclick="triggerFileInput('file-aadharBack')">
