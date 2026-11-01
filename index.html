@@ -386,9 +386,9 @@
                 <h3 style="font-size: 0.98rem; font-weight: 800; color: var(--color-primary); margin-bottom: 12px;">🪪 Client Identity Uploads</h3>
                 
                 <div class="register-2col-grid" style="margin-bottom: 14px;">
-                  <!-- Aadhaar Front (Direct Click Button Version) -->
-<div class="upload-box" id="box-aadharFront" style="padding: 10px; text-align: center; background: #f0f9ff; border: 1.5px dashed #bae6fd; border-radius: 8px; margin-bottom: 12px;">
-  <div style="font-size: 0.78rem; font-weight: 700; margin-bottom: 6px;">Aadhaar Front *</div>
+                  <!-- Aadhaar Front (Direct Native File Input Button) -->
+<div class="upload-box" id="box-aadharFront" style="padding: 12px; text-align: center; background: #f0f9ff; border: 1.5px dashed #bae6fd; border-radius: 8px; margin-bottom: 12px;">
+  <div style="font-size: 0.8rem; font-weight: 800; color: #0369a1; margin-bottom: 6px;">Aadhaar Front *</div>
   <span id="tag-aadharFront" style="display: none; font-size: 0.65rem; background-color: #e0f2fe; color: #0284c7; padding: 2px 6px; border-radius: 4px; font-weight: 800;">✓ Ready</span>
   
   <div id="preview-aadharFront" style="display: none; margin-bottom: 6px;">
@@ -397,11 +397,13 @@
   </div>
 
   <div id="placeholder-aadharFront">
-    <button type="button" onclick="document.getElementById('file-aadharFront').click()" class="btn btn-primary" style="font-size: 0.78rem; padding: 6px 14px; width: 100%;">📁 Select & Upload Front</button>
+    <!-- Neradhe phone-inte native file browser open aakum -->
+    <label for="file-aadharFront" style="display: inline-block; background-color: #0284c7; color: #ffffff; padding: 8px 16px; border-radius: 6px; font-size: 0.8rem; font-weight: 700; cursor: pointer;">
+      📁 Choose Photo / File
+    </label>
   </div>
-  <input type="file" id="file-aadharFront" accept="image/*" style="display: none;" onchange="processImageUpload(event, 'aadharFront')">
+  <input type="file" id="file-aadharFront" accept="image/*" style="display: block; margin: 8px auto 0 auto; font-size: 0.75rem;" onchange="processImageUpload(event, 'aadharFront')">
 </div>
-
 
                   <!-- Aadhaar Back -->
                   <div class="upload-box" id="box-aadharBack" onclick="triggerFileInput('file-aadharBack')">
