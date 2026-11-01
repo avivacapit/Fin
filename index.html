@@ -1153,11 +1153,11 @@
           documents: { ...uploadedImages }
         };
 
-        applicationsStore = JSON.parse(localStorage.getItem('aviva_applications_store')) || applicationsStore;
+        // Storage-il data shariykku load cheythu push cheythu save cheyyunnu
+        applicationsStore = JSON.parse(localStorage.getItem('aviva_applications_store')) || [];
         applicationsStore.push(newRecord);
-        activeClientIndex = applicationsStore.length - 1;
-
         saveStoreToLocalStorage();
+        activeClientIndex = applicationsStore.length - 1;
 
         document.getElementById('registration-form').style.display = 'none';
         document.getElementById('registration-success-card').style.display = 'block';
@@ -1169,11 +1169,9 @@
     }
 
     function resetRegistrationForm() {
-      // Form fields clear cheyyuka
       document.getElementById('registration-form').reset();
       document.getElementById('input-synced-email').value = '';
       
-      // Uploaded images state clear cheyyuka
       uploadedImages = {
         aadharFront: '',
         aadharBack: '',
@@ -1181,7 +1179,6 @@
         nomineeAadhar: ''
       };
 
-      // Upload UI preview boxes reset cheyyuka
       ['aadharFront', 'aadharBack', 'photo', 'nomineeAadhar'].forEach(key => {
         const box = document.getElementById(`box-${key}`);
         const tag = document.getElementById(`tag-${key}`);
@@ -1193,14 +1190,12 @@
         if (tag) tag.style.display = 'none';
         if (imgEl) imgEl.src = '';
         if (preview) preview.style.display = 'none';
-        if (placeholder) placeholder.style.display = key === 'photo' || key === 'nomineeAadhar' ? 'flex' : 'flex';
+        if (placeholder) placeholder.style.display = 'flex';
       });
 
-      // Success card hide cheythu form veendum display cheyyuka
       document.getElementById('registration-success-card').style.display = 'none';
       document.getElementById('registration-form').style.display = 'block';
       
-      // Step 1-lekku mattuka
       goToStep(1);
     }
 
@@ -1216,7 +1211,7 @@
       const u = document.getElementById('login-input-user').value.trim();
       const p = document.getElementById('login-input-pass').value.trim();
       
-      applicationsStore = JSON.parse(localStorage.getItem('aviva_applications_store')) || applicationsStore;
+      applicationsStore = JSON.parse(localStorage.getItem('aviva_applications_store')) || [];
       
       const foundIndex = applicationsStore.findIndex(app => app.email.toLowerCase() === u.toLowerCase() && app.password === p);
 
@@ -1232,7 +1227,7 @@
 
     function openClientDashboard(idx = activeClientIndex) {
       activeClientIndex = idx;
-      applicationsStore = JSON.parse(localStorage.getItem('aviva_applications_store')) || applicationsStore;
+      applicationsStore = JSON.parse(localStorage.getItem('aviva_applications_store')) || [];
       const client = applicationsStore[activeClientIndex];
       
       document.getElementById('registration-view-wrapper').style.display = 'none';
@@ -1314,7 +1309,7 @@
     }
 
     function requestWithdrawal() {
-      applicationsStore = JSON.parse(localStorage.getItem('aviva_applications_store')) || applicationsStore;
+      applicationsStore = JSON.parse(localStorage.getItem('aviva_applications_store')) || [];
       const client = applicationsStore[activeClientIndex];
       const withdrawInput = document.getElementById('input-withdraw-amount');
       const amount = Number(withdrawInput.value) || 0;
@@ -1345,7 +1340,7 @@
     }
 
     function updateWalletNoticeUI() {
-      applicationsStore = JSON.parse(localStorage.getItem('aviva_applications_store')) || applicationsStore;
+      applicationsStore = JSON.parse(localStorage.getItem('aviva_applications_store')) || [];
       const client = applicationsStore[activeClientIndex];
       const notice = document.getElementById('wallet-status-notice');
       const bankContainer = document.getElementById('withdraw-bank-container');
@@ -1411,6 +1406,7 @@
       document.getElementById('main-portal-card').style.gridTemplateColumns = '1fr';
       document.getElementById('admin-panel-wrapper').style.display = 'block';
       document.getElementById('header-login-btn').style.display = 'none';
+      renderAdminList(); // Admin panel open cheyyumpol thanne applications list fetch cheythu display cheyyum
     }
 
     function verifyAdminLogin() {
@@ -1432,7 +1428,8 @@
     }
 
     function renderAdminList() {
-      applicationsStore = JSON.parse(localStorage.getItem('aviva_applications_store')) || applicationsStore;
+      // Ella applications-um localStorage-il ninnu fresh aayi fetch cheyyunnu
+      applicationsStore = JSON.parse(localStorage.getItem('aviva_applications_store')) || [];
       const list = document.getElementById('admin-applications-list');
       list.innerHTML = '';
       
@@ -1495,7 +1492,7 @@
     }
 
     function openAdminDocs(i) {
-      applicationsStore = JSON.parse(localStorage.getItem('aviva_applications_store')) || applicationsStore;
+      applicationsStore = JSON.parse(localStorage.getItem('aviva_applications_store')) || [];
       const app = applicationsStore[i];
       const container = document.getElementById('admin-docs-content');
       document.getElementById('admin-docs-title').innerText = `🪪 Documents: ${app.fullName} (${app.id})`;
