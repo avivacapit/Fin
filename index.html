@@ -346,34 +346,37 @@
               <div style="font-size: 52px; color: #16a34a; margin-bottom: 12px;">✓</div>
               <h4 style="font-size: 1.4rem; color: #15803d; font-weight: 900; margin-bottom: 8px;">Registration Completed!</h4>
               <p id="success-message-text" style="font-size: 0.95rem; color: var(--color-text-main); margin-bottom: 20px;">Client record created with verified Aadhaar credentials. Account submitted.</p>
-              <button onclick="openClientDashboard()" class="btn btn-primary" style="font-size: 0.9rem;">Open Client Dashboard →</button>
+              <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                <button onclick="openClientDashboard()" class="btn btn-primary" style="font-size: 0.9rem;">Open Client Dashboard →</button>
+                <button onclick="resetRegistrationForm()" class="btn btn-outline" style="font-size: 0.9rem;">+ Register New Client</button>
+              </div>
             </div>
 
             <!-- Form Element -->
-            <form id="registration-form" onsubmit="event.preventDefault();">
+            <form id="registration-form" autocomplete="off" onsubmit="event.preventDefault();">
 
               <!-- STEP 1: Contact Details -->
               <div id="step-1-container">
                 <div class="form-group">
                   <label>👤 Full Legal Name *</label>
-                  <input type="text" id="input-full-name" required placeholder="Enter client's legal name" class="form-control" value="">
+                  <input type="text" id="input-full-name" required autocomplete="off" placeholder="Enter client's legal name" class="form-control" value="">
                 </div>
                 <div class="form-group">
                   <label>✉️ Email Address (Account Username) *</label>
-                  <input type="email" id="input-email" required placeholder="client@example.com" class="form-control" value="">
+                  <input type="email" id="input-email" required autocomplete="off" placeholder="client@example.com" class="form-control" value="">
                   <span style="font-size: 0.75rem; color: var(--color-text-light); display: block; margin-top: 4px;">ℹ️ This email will serve as the account login username.</span>
                 </div>
                 <div class="form-group">
                   <label>📱 Mobile Phone Number *</label>
-                  <input type="tel" id="input-phone" required placeholder="+91 98765 43210" class="form-control" value="">
+                  <input type="tel" id="input-phone" required autocomplete="off" placeholder="+91 98765 43210" class="form-control" value="">
                 </div>
                 <div class="form-group">
                   <label>📅 Date of Birth *</label>
-                  <input type="date" id="input-dob" required class="form-control" value="">
+                  <input type="date" id="input-dob" required autocomplete="off" class="form-control" value="">
                 </div>
                 <div class="form-group" style="margin-bottom: 24px;">
                   <label>🏠 Residential Address *</label>
-                  <textarea id="input-address" required placeholder="Enter complete residential address" class="form-control" style="min-height: 75px; resize: vertical;"></textarea>
+                  <textarea id="input-address" required autocomplete="off" placeholder="Enter complete residential address" class="form-control" style="min-height: 75px; resize: vertical;"></textarea>
                 </div>
                 <button type="button" onclick="handleNextStep()" class="btn btn-primary" style="width: 100%; padding: 14px;">Continue to Step 2 (KYC & Nominee) →</button>
               </div>
@@ -451,11 +454,11 @@
                   <div class="register-2col-grid">
                     <div class="form-group" style="margin-bottom: 10px;">
                       <label style="font-size: 0.78rem;">Nominee Legal Name *</label>
-                      <input type="text" id="input-nominee-name" required placeholder="Nominee name" class="form-control" value="">
+                      <input type="text" id="input-nominee-name" required autocomplete="off" placeholder="Nominee name" class="form-control" value="">
                     </div>
                     <div class="form-group" style="margin-bottom: 10px;">
                       <label style="font-size: 0.78rem;">Nominee Mobile *</label>
-                      <input type="tel" id="input-nominee-phone" required placeholder="+91 Nominee phone" class="form-control" value="">
+                      <input type="tel" id="input-nominee-phone" required autocomplete="off" placeholder="+91 Nominee phone" class="form-control" value="">
                     </div>
                   </div>
 
@@ -497,7 +500,7 @@
                   </div>
                   <div class="form-group">
                     <label>Net Monthly Income (₹)</label>
-                    <input type="number" id="input-salary" value="50000" class="form-control">
+                    <input type="number" id="input-salary" value="" placeholder="50000" autocomplete="off" class="form-control">
                   </div>
                 </div>
 
@@ -506,7 +509,7 @@
                   <div class="register-2col-grid">
                     <div class="form-group" style="margin-bottom: 8px;">
                       <label>Loan Amount (₹)</label>
-                      <input type="number" id="input-loan-amount" value="500000" step="25000" class="form-control" oninput="calculateEMI()">
+                      <input type="number" id="input-loan-amount" value="" placeholder="500000" step="25000" autocomplete="off" class="form-control" oninput="calculateEMI()">
                     </div>
                     <div class="form-group" style="margin-bottom: 8px;">
                       <label>Tenure (Months)</label>
@@ -521,7 +524,7 @@
                   </div>
                   <div class="emi-card">
                     <span style="font-size: 0.85rem; color: #bae6fd;">Estimated Monthly EMI (@11.9% p.a.)</span>
-                    <span class="emi-amount" id="display-emi-amount">₹23,514 / mo</span>
+                    <span class="emi-amount" id="display-emi-amount">₹0 / mo</span>
                   </div>
                 </div>
 
@@ -529,7 +532,7 @@
                 <div style="background-color: #f0f7ff; border: 1.5px solid var(--color-border); border-radius: var(--radius-md); padding: 14px; margin-bottom: 18px;">
                   <h4 style="font-size: 0.88rem; font-weight: 800; color: var(--color-primary); margin-bottom: 10px;">🏦 Bank Account Details</h4>
                   <div class="register-2col-grid">
-                    <div class="form-group" style="margin-bottom: 10px;"><label style="font-size: 0.78rem;">Bank Name *</label><input type="text" id="input-bank-name" placeholder="e.g. SBI / HDFC Bank" class="form-control" value=""></div>
+                    <div class="form-group" style="margin-bottom: 10px;"><label style="font-size: 0.78rem;">Bank Name *</label><input type="text" id="input-bank-name" autocomplete="off" placeholder="e.g. SBI / HDFC Bank" class="form-control" value=""></div>
                     <div class="form-group" style="margin-bottom: 10px;"><label style="font-size: 0.78rem;">Account Type *</label>
                       <select id="input-bank-type" class="form-control">
                         <option value="Savings Account" selected>Savings Account</option>
@@ -538,8 +541,8 @@
                     </div>
                   </div>
                   <div class="register-2col-grid">
-                    <div class="form-group" style="margin-bottom: 10px;"><label style="font-size: 0.78rem;">Account Number *</label><input type="text" id="input-bank-acc" placeholder="Bank account number" class="form-control" value=""></div>
-                    <div class="form-group" style="margin-bottom: 10px;"><label style="font-size: 0.78rem;">IFSC Code *</label><input type="text" id="input-bank-ifsc" placeholder="IFSC Code" class="form-control" value=""></div>
+                    <div class="form-group" style="margin-bottom: 10px;"><label style="font-size: 0.78rem;">Account Number *</label><input type="text" id="input-bank-acc" autocomplete="off" placeholder="Bank account number" class="form-control" value=""></div>
+                    <div class="form-group" style="margin-bottom: 10px;"><label style="font-size: 0.78rem;">IFSC Code *</label><input type="text" id="input-bank-ifsc" autocomplete="off" placeholder="IFSC Code" class="form-control" value=""></div>
                   </div>
                 </div>
 
@@ -550,16 +553,16 @@
                   </div>
                   <div class="form-group" style="margin-bottom: 10px;">
                     <label style="font-size: 0.78rem;">Username (Auto-synced)</label>
-                    <input type="email" id="input-synced-email" readonly class="form-control" style="background-color: #e0f2fe; font-weight: 700; cursor: not-allowed;">
+                    <input type="email" id="input-synced-email" readonly class="form-control" style="background-color: #e0f2fe; font-weight: 700; cursor: not-allowed;" value="">
                   </div>
                   <div class="register-2col-grid">
                     <div class="form-group" style="margin: 0;">
                       <label style="font-size: 0.78rem;">Create Password *</label>
-                      <input type="password" id="input-password" required placeholder="Min 6 characters" class="form-control" value="">
+                      <input type="password" id="input-password" required autocomplete="new-password" placeholder="Min 6 characters" class="form-control" value="">
                     </div>
                     <div class="form-group" style="margin: 0;">
                       <label style="font-size: 0.78rem;">Confirm Password *</label>
-                      <input type="password" id="input-confirm-password" required placeholder="Re-enter password" class="form-control" value="">
+                      <input type="password" id="input-confirm-password" required autocomplete="new-password" placeholder="Re-enter password" class="form-control" value="">
                     </div>
                   </div>
                 </div>
@@ -631,7 +634,7 @@
 
                   <div class="stylish-card" style="background: linear-gradient(135deg, #072545 0%, #0369a1 100%); color: #fff;">
                     <div class="stylish-card-title" style="color: #bae6fd;">💳 Estimated Monthly EMI</div>
-                    <div class="stylish-card-value" style="color: #38bdf8; font-size: 1.35rem;">₹23,514 <span style="font-size: 0.75rem; color: #fff; font-weight: 400;">/ mo</span></div>
+                    <div class="stylish-card-value" style="color: #38bdf8; font-size: 1.35rem;">₹0 <span style="font-size: 0.75rem; color: #fff; font-weight: 400;">/ mo</span></div>
                   </div>
                 </div>
 
@@ -656,7 +659,7 @@
                 <div class="stylish-emi-grid" style="margin-bottom: 16px;">
                   <div class="stylish-card" style="background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%);">
                     <div class="stylish-card-title">🆔 CLIENT ID</div>
-                    <div class="stylish-card-value" style="color: #0369a1;" id="info-id">AC-1001</div>
+                    <div class="stylish-card-value" style="color: #0369a1;" id="info-id">-</div>
                   </div>
                   <div class="stylish-card" style="background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);">
                     <div class="stylish-card-title">👤 FULL LEGAL NAME</div>
@@ -774,7 +777,7 @@
                 <div class="stylish-emi-grid">
                   <div class="stylish-card" style="background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%);">
                     <div class="stylish-card-title">🆔 Client ID</div>
-                    <div class="stylish-card-value" id="emi-client-id" style="color: #0369a1;">AC-1001</div>
+                    <div class="stylish-card-value" id="emi-client-id" style="color: #0369a1;">-</div>
                   </div>
                   <div class="stylish-card" style="background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);">
                     <div class="stylish-card-title">👤 Client Name</div>
@@ -794,7 +797,7 @@
                   </div>
                   <div class="stylish-card" style="background: linear-gradient(135deg, #072545 0%, #0369a1 100%); color: #fff;">
                     <div class="stylish-card-title" style="color: #bae6fd;">💳 Monthly EMI</div>
-                    <div class="stylish-card-value" style="color: #38bdf8; font-size: 1.35rem;">₹23,514 <span style="font-size: 0.75rem; color: #fff; font-weight: 400;">/ mo</span></div>
+                    <div class="stylish-card-value" style="color: #38bdf8; font-size: 1.35rem;">₹0 <span style="font-size: 0.75rem; color: #fff; font-weight: 400;">/ mo</span></div>
                   </div>
                 </div>
 
@@ -905,11 +908,11 @@
     </div>
   </footer>
 
-  <!-- Interactive JavaScript Logic with LocalStorage Persist -->
+  <!-- Interactive JavaScript Logic -->
   <script>
     let currentStep = 1;
     let employmentType = 'Salaried';
-    const uploadedImages = {
+    let uploadedImages = {
       aadharFront: '',
       aadharBack: '',
       photo: '',
@@ -926,7 +929,6 @@
     let countdownInterval = null;
 
     window.addEventListener('DOMContentLoaded', () => {
-      saveStoreToLocalStorage();
       if (window.location.hash === '#admin') openAdminPanel();
     });
 
@@ -974,7 +976,7 @@
       } else if (step === 3) {
         stepDesc.innerText = "Set loan parameters and create secure client credentials.";
         const email = document.getElementById('input-email').value;
-        document.getElementById('input-synced-email').value = email || 'client@example.com';
+        document.getElementById('input-synced-email').value = email || '';
         calculateEMI();
       }
 
@@ -1152,14 +1154,8 @@
         };
 
         applicationsStore = JSON.parse(localStorage.getItem('aviva_applications_store')) || applicationsStore;
-        const existingIdx = applicationsStore.findIndex(app => app.email.toLowerCase() === newRecord.email.toLowerCase());
-        if (existingIdx !== -1) {
-          applicationsStore[existingIdx] = newRecord;
-          activeClientIndex = existingIdx;
-        } else {
-          applicationsStore.push(newRecord);
-          activeClientIndex = applicationsStore.length - 1;
-        }
+        applicationsStore.push(newRecord);
+        activeClientIndex = applicationsStore.length - 1;
 
         saveStoreToLocalStorage();
 
@@ -1170,6 +1166,42 @@
           successText.innerText = `Account for "${newRecord.fullName}" (${newRecord.email}) created successfully with Client ID: ${newRecord.id}.`;
         }
       }
+    }
+
+    function resetRegistrationForm() {
+      // Form fields clear cheyyuka
+      document.getElementById('registration-form').reset();
+      document.getElementById('input-synced-email').value = '';
+      
+      // Uploaded images state clear cheyyuka
+      uploadedImages = {
+        aadharFront: '',
+        aadharBack: '',
+        photo: '',
+        nomineeAadhar: ''
+      };
+
+      // Upload UI preview boxes reset cheyyuka
+      ['aadharFront', 'aadharBack', 'photo', 'nomineeAadhar'].forEach(key => {
+        const box = document.getElementById(`box-${key}`);
+        const tag = document.getElementById(`tag-${key}`);
+        const preview = document.getElementById(`preview-${key}`);
+        const placeholder = document.getElementById(`placeholder-${key}`);
+        const imgEl = document.getElementById(`img-${key}`);
+
+        if (box) box.classList.remove('uploaded');
+        if (tag) tag.style.display = 'none';
+        if (imgEl) imgEl.src = '';
+        if (preview) preview.style.display = 'none';
+        if (placeholder) placeholder.style.display = key === 'photo' || key === 'nomineeAadhar' ? 'flex' : 'flex';
+      });
+
+      // Success card hide cheythu form veendum display cheyyuka
+      document.getElementById('registration-success-card').style.display = 'none';
+      document.getElementById('registration-form').style.display = 'block';
+      
+      // Step 1-lekku mattuka
+      goToStep(1);
     }
 
     function openLoginModal() { 
