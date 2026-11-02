@@ -386,24 +386,24 @@
                 <h3 style="font-size: 0.98rem; font-weight: 800; color: var(--color-primary); margin-bottom: 12px;">🪪 Client Identity Uploads</h3>
                 
                 <div class="register-2col-grid" style="margin-bottom: 14px;">
-                  <!-- Aadhaar Front (Direct Native Overlay Version - 100% Working on Android) -->
-<div class="upload-box" id="box-aadharFront" style="position: relative; padding: 14px; text-align: center; background: #f0f9ff; border: 1.5px dashed #bae6fd; border-radius: 8px; margin-bottom: 12px; overflow: hidden;">
-  <div style="font-size: 0.8rem; font-weight: 800; color: #0369a1; margin-bottom: 6px;">Aadhaar Front *</div>
-  <span id="tag-aadharFront" style="display: none; font-size: 0.65rem; background-color: #e0f2fe; color: #0284c7; padding: 2px 6px; border-radius: 4px; font-weight: 800;">✓ Ready</span>
-  
-  <div id="preview-aadharFront" style="display: none; margin-bottom: 6px;">
-    <img id="img-aadharFront" src="" alt="Aadhaar Front" style="width: 100%; height: 75px; object-fit: cover; border-radius: 4px;">
-    <button type="button" onclick="removeImage('aadharFront')" style="background: #fee2e2; color: #b91c1c; border: none; border-radius: 4px; padding: 2px 8px; font-size: 0.68rem; font-weight: 700; margin-top: 4px; cursor: pointer; position: relative; z-index: 5;">✕ Remove</button>
-  </div>
+                  <!-- Aadhaar Front -->
+                  <div class="upload-box" id="box-aadharFront" style="position: relative; padding: 14px; text-align: center; background: #f0f9ff; border: 1.5px dashed #bae6fd; border-radius: 8px; margin-bottom: 12px; overflow: hidden;">
+                    <div style="font-size: 0.8rem; font-weight: 800; color: #0369a1; margin-bottom: 6px;">Aadhaar Front *</div>
+                    <span id="tag-aadharFront" style="display: none; font-size: 0.65rem; background-color: #e0f2fe; color: #0284c7; padding: 2px 6px; border-radius: 4px; font-weight: 800;">✓ Ready</span>
+                    
+                    <div id="preview-aadharFront" style="display: none; margin-bottom: 6px;">
+                      <img id="img-aadharFront" src="" alt="Aadhaar Front" style="width: 100%; height: 75px; object-fit: cover; border-radius: 4px;">
+                      <button type="button" onclick="removeImage('aadharFront')" style="background: #fee2e2; color: #b91c1c; border: none; border-radius: 4px; padding: 2px 8px; font-size: 0.68rem; font-weight: 700; margin-top: 4px; cursor: pointer; position: relative; z-index: 5;">✕ Remove</button>
+                    </div>
 
-  <div id="placeholder-aadharFront">
-    <span style="font-size: 20px;">📁</span>
-    <div style="font-size: 0.78rem; color: var(--color-primary); font-weight: 700; margin-top: 4px;">Tap here to Choose File / Camera</div>
-  </div>
+                    <div id="placeholder-aadharFront">
+                      <span style="font-size: 20px;">📁</span>
+                      <div style="font-size: 0.78rem; color: var(--color-primary); font-weight: 700; margin-top: 4px;">Tap here to Choose File / Camera</div>
+                    </div>
 
-  <!-- Native file input covers the entire box invisibly so Android Chrome triggers it directly -->
-  <input type="file" id="file-aadharFront" accept="image/*" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; z-index: 2;" onchange="processImageUpload(event, 'aadharFront')">
-</div>
+                    <input type="file" id="file-aadharFront" accept="image/*" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; z-index: 2;" onchange="processImageUpload(event, 'aadharFront')">
+                  </div>
+
                   <!-- Aadhaar Back -->
                   <div class="upload-box" id="box-aadharBack" onclick="triggerFileInput('file-aadharBack')">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
@@ -575,7 +575,7 @@
           <!-- CLIENT DASHBOARD WRAPPER -->
           <div id="client-dashboard-wrapper" style="display: none;">
             
-            <!-- Dashboard Home View (Colorful & Stylish EMI Cards) -->
+            <!-- Dashboard Home View -->
             <div id="dash-tab-dashboard" style="display: block;">
               <div style="background: linear-gradient(165deg, #072545 0%, #0369a1 60%, #0284c7 100%); color: #ffffff; padding: 36px 28px; border-radius: var(--radius-md); text-align: center; margin-bottom: 20px; box-shadow: 0 10px 25px rgba(2, 132, 199, 0.2);">
                 <div style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 16px;">
@@ -599,7 +599,7 @@
                   <h3 style="font-size: 1.1rem; font-weight: 900; color: var(--color-primary); display: flex; align-items: center; gap: 8px;">
                     <span>📊</span> EMI Details & Loan Summary
                   </h3>
-                  <span style="background: #e0f2fe; color: #0284c7; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 800;">Live Loan Feed</span>
+                  <span style="background: #e0f2fe; color: #0284c7; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 800;">Firebase Live Feed</span>
                 </div>
 
                 <div class="stylish-emi-grid">
@@ -651,7 +651,6 @@
                   <span style="background: #e0f2fe; color: #0284c7; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 800;">Verified Profile</span>
                 </div>
 
-                <!-- Client Basic Details -->
                 <div class="stylish-emi-grid" style="margin-bottom: 16px;">
                   <div class="stylish-card" style="background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%);">
                     <div class="stylish-card-title">🆔 CLIENT ID</div>
@@ -679,13 +678,11 @@
                   </div>
                 </div>
 
-                <!-- Address -->
                 <div style="background: #f8fbfe; padding: 14px 16px; border-radius: 12px; border: 1px solid #e0f2fe; margin-bottom: 16px;">
                   <div style="font-size: 0.75rem; color: #64748b; font-weight: 800; margin-bottom: 4px;">🏠 REGISTERED RESIDENTIAL ADDRESS</div>
                   <div style="font-size: 0.95rem; font-weight: 700; color: #334155;" id="info-address">-</div>
                 </div>
 
-                <!-- Nominee Details Card -->
                 <div style="background: #f0f7ff; padding: 18px; border-radius: 14px; border: 1.5px solid #bae6fd; margin-bottom: 16px;">
                   <h4 style="font-size: 0.9rem; font-weight: 900; color: #0284c7; margin-bottom: 12px; display: flex; align-items: center; gap: 6px;">
                     <span>👥</span> NOMINEE PARTICULARS
@@ -702,7 +699,6 @@
                   </div>
                 </div>
 
-                <!-- Bank Details Card -->
                 <div style="background: #f0f7ff; padding: 18px; border-radius: 14px; border: 1.5px solid #bae6fd;">
                   <h4 style="font-size: 0.9rem; font-weight: 900; color: #0284c7; margin-bottom: 12px; display: flex; align-items: center; gap: 6px;">
                     <span>🏦</span> DISBURSEMENT BANK DETAILS
@@ -743,7 +739,6 @@
                 
                 <div id="wallet-status-notice" style="display: none; padding: 14px; border-radius: 10px; margin-bottom: 16px; font-weight: 800; font-size: 0.9rem; text-align: center; border: 1.5px solid transparent;"></div>
 
-                <!-- Withdrawal Bank Details Display Box -->
                 <div id="withdraw-bank-container" style="display: none; background: #f8fbfe; border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 16px; margin-bottom: 16px;">
                   <div style="font-size: 0.9rem; font-weight: 900; color: #0284c7; margin-bottom: 10px; display: flex; align-items: center; gap: 6px;">
                     <span>🔍</span> Verify Your Account
@@ -816,7 +811,7 @@
             </div>
             <div id="admin-dashboard-box" style="display: none;">
               <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; border-bottom: 2px solid #e0f2fe; padding-bottom: 10px;">
-                <h1 style="font-size: 1.4rem; font-weight: 900; color: var(--color-primary);">Applications & Wallet Manager</h1>
+                <h1 style="font-size: 1.4rem; font-weight: 900; color: var(--color-primary);">Applications & Wallet Manager (Firebase Live)</h1>
                 <button onclick="adminLogout()" class="btn btn-outline" style="color: #ef4444; border-color: #ef4444; font-size: 0.8rem; padding: 6px 12px;">🔒 Admin Logout</button>
               </div>
               <div id="admin-applications-list"></div>
@@ -904,8 +899,25 @@
     </div>
   </footer>
 
-  <!-- Interactive JavaScript Logic -->
-  <script>
+  <!-- Firebase Integration & App Logic -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+    import { getFirestore, collection, addDoc, getDocs, updateDoc, doc, onSnapshot } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+    // Firebase Configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyBVLRqoYgqWQc16Wlvn",
+      authDomain: "avivacapitalfin-a1c57.firebaseapp.com",
+      projectId: "avivacapitalfin-a1c57",
+      storageBucket: "avivacapitalfin-a1c57.appspot.com",
+      messagingSenderId: "230095587897",
+      appId: "1:230095587897:web:609b09",
+      measurementId: "G-VXQS93MDQP"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
     let currentStep = 1;
     let employmentType = 'Salaried';
     let uploadedImages = {
@@ -915,20 +927,28 @@
       nomineeAadhar: ''
     };
 
-    let applicationsStore = JSON.parse(localStorage.getItem('aviva_applications_store')) || [];
-
-    function saveStoreToLocalStorage() {
-      localStorage.setItem('aviva_applications_store', JSON.stringify(applicationsStore));
-    }
-
+    let applicationsStore = [];
     let activeClientIndex = 0;
     let countdownInterval = null;
+
+    // Real-time synchronization using Firestore onSnapshot
+    onSnapshot(collection(db, "applications"), (snapshot) => {
+      applicationsStore = [];
+      snapshot.forEach((docSnap) => {
+        applicationsStore.push({ docId: docSnap.id, ...docSnap.data() });
+      });
+      
+      // Update UI if admin panel or client dashboard is active
+      if (document.getElementById('admin-dashboard-box').style.display === 'block') {
+        renderAdminList();
+      }
+    });
 
     window.addEventListener('DOMContentLoaded', () => {
       if (window.location.hash === '#admin') openAdminPanel();
     });
 
-    function showError(msg) {
+    window.showError = function(msg) {
       const el = document.getElementById('form-error-alert');
       if (msg) {
         el.innerText = '⚠️ ' + msg;
@@ -936,9 +956,9 @@
       } else {
         el.style.display = 'none';
       }
-    }
+    };
 
-    function goToStep(step) {
+    window.goToStep = function(step) {
       showError('');
       currentStep = step;
       document.getElementById('step-1-container').style.display = step === 1 ? 'block' : 'none';
@@ -977,15 +997,15 @@
       }
 
       window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+    };
 
-    function setEmploymentType(type) {
+    window.setEmploymentType = function(type) {
       employmentType = type;
       document.getElementById('btn-salaried').className = type === 'Salaried' ? 'btn btn-primary' : 'btn btn-outline';
       document.getElementById('btn-self-employed').className = type === 'Self-Employed' ? 'btn btn-primary' : 'btn btn-outline';
-    }
+    };
 
-    function calculateEMI() {
+    window.calculateEMI = function() {
       const P = Number(document.getElementById('input-loan-amount').value) || 0;
       const tenure = Number(document.getElementById('select-tenure').value) || 12;
       const r = 0.119 / 12; 
@@ -999,17 +1019,14 @@
         emiEl.innerText = '₹' + emi.toLocaleString('en-IN') + ' / mo';
       }
       return emi;
-    }
+    };
 
-    // Direct file input trigger for mobile compatibility
-    function triggerFileInput(fileInputId) {
+    window.triggerFileInput = function(fileInputId) {
       const inputEl = document.getElementById(fileInputId);
-      if (inputEl) {
-        inputEl.click();
-      }
-    }
+      if (inputEl) inputEl.click();
+    };
 
-    function processImageUpload(event, key) {
+    window.processImageUpload = function(event, key) {
       const file = event.target.files[0];
       if (!file) return;
 
@@ -1055,9 +1072,9 @@
         img.src = e.target.result;
       };
       reader.readAsDataURL(file);
-    }
+    };
 
-    function removeImage(key) {
+    window.removeImage = function(key) {
       uploadedImages[key] = '';
       const box = document.getElementById(`box-${key}`);
       const tag = document.getElementById(`tag-${key}`);
@@ -1073,23 +1090,23 @@
       
       const fileInput = document.getElementById(`file-${key}`);
       if (fileInput) fileInput.value = '';
-    }
+    };
 
-    function openZoomModal(key, title) {
+    window.openZoomModal = function(key, title) {
       const url = uploadedImages[key];
       if (!url) return;
       document.getElementById('zoom-modal-title').innerText = title;
       document.getElementById('zoom-modal-img').src = url;
       document.getElementById('zoom-modal').style.display = 'flex';
-    }
+    };
 
-    function closeZoomModal(event) {
+    window.closeZoomModal = function(event) {
       if (!event || event.target.id === 'zoom-modal' || event.target.tagName === 'BUTTON') {
         document.getElementById('zoom-modal').style.display = 'none';
       }
-    }
+    };
 
-    function handleNextStep() {
+    window.handleNextStep = async function() {
       showError('');
 
       if (currentStep === 1) {
@@ -1100,7 +1117,7 @@
         const address = document.getElementById('input-address').value.trim();
 
         if (!name || !email || !phone || !dob || !address) {
-          showError('Please complete all fields in Step 1 (Name, Email, Phone, DOB, Address).');
+          showError('Please complete all fields in Step 1.');
           return;
         }
         goToStep(2);
@@ -1160,30 +1177,30 @@
           documents: { ...uploadedImages }
         };
 
-        applicationsStore = JSON.parse(localStorage.getItem('aviva_applications_store')) || [];
-        applicationsStore.push(newRecord);
-        saveStoreToLocalStorage();
-        activeClientIndex = applicationsStore.length - 1;
+        try {
+          // Save directly to Firebase Firestore
+          const docRef = await addDoc(collection(db, "applications"), newRecord);
+          newRecord.docId = docRef.id;
+          applicationsStore.push(newRecord);
+          activeClientIndex = applicationsStore.length - 1;
 
-        document.getElementById('registration-form').style.display = 'none';
-        document.getElementById('registration-success-card').style.display = 'block';
-        const successText = document.getElementById('success-message-text');
-        if (successText) {
-          successText.innerText = `Account for "${newRecord.fullName}" (${newRecord.email}) created successfully with Client ID: ${newRecord.id}.`;
+          document.getElementById('registration-form').style.display = 'none';
+          document.getElementById('registration-success-card').style.display = 'block';
+          const successText = document.getElementById('success-message-text');
+          if (successText) {
+            successText.innerText = `Account for "${newRecord.fullName}" created successfully with Client ID: ${newRecord.id}.`;
+          }
+        } catch (e) {
+          showError('Error saving application to database: ' + e.message);
         }
       }
-    }
+    };
 
-    function resetRegistrationForm() {
+    window.resetRegistrationForm = function() {
       document.getElementById('registration-form').reset();
       document.getElementById('input-synced-email').value = '';
       
-      uploadedImages = {
-        aadharFront: '',
-        aadharBack: '',
-        photo: '',
-        nomineeAadhar: ''
-      };
+      uploadedImages = { aadharFront: '', aadharBack: '', photo: '', nomineeAadhar: '' };
 
       ['aadharFront', 'aadharBack', 'photo', 'nomineeAadhar'].forEach(key => {
         const box = document.getElementById(`box-${key}`);
@@ -1204,23 +1221,20 @@
 
       document.getElementById('registration-success-card').style.display = 'none';
       document.getElementById('registration-form').style.display = 'block';
-      
       goToStep(1);
-    }
+    };
 
-    function openLoginModal() { 
+    window.openLoginModal = function() { 
       document.getElementById('client-login-modal').style.display = 'flex'; 
-    }
+    };
     
-    function closeLoginModal() { 
+    window.closeLoginModal = function() { 
       document.getElementById('client-login-modal').style.display = 'none'; 
-    }
+    };
 
-    function submitClientLogin() {
+    window.submitClientLogin = function() {
       const u = document.getElementById('login-input-user').value.trim();
       const p = document.getElementById('login-input-pass').value.trim();
-      
-      applicationsStore = JSON.parse(localStorage.getItem('aviva_applications_store')) || [];
       
       const foundIndex = applicationsStore.findIndex(app => app.email.toLowerCase() === u.toLowerCase() && app.password === p);
 
@@ -1232,12 +1246,12 @@
         err.innerText = '⚠️ Invalid User ID or Password!';
         err.style.display = 'block';
       }
-    }
+    };
 
-    function openClientDashboard(idx = activeClientIndex) {
+    window.openClientDashboard = function(idx = activeClientIndex) {
       activeClientIndex = idx;
-      applicationsStore = JSON.parse(localStorage.getItem('aviva_applications_store')) || [];
       const client = applicationsStore[activeClientIndex];
+      if (!client) return;
       
       document.getElementById('registration-view-wrapper').style.display = 'none';
       document.getElementById('registration-success-card').style.display = 'none';
@@ -1302,23 +1316,22 @@
       }
       
       switchDashboardTab('dashboard');
-    }
+    };
 
-    function toggleDropdownMenu() {
+    window.toggleDropdownMenu = function() {
       const menu = document.getElementById('nav-dropdown-menu');
       menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
-    }
+    };
 
-    function switchDashboardTab(tab) {
+    window.switchDashboardTab = function(tab) {
       document.getElementById('dash-tab-dashboard').style.display = tab === 'dashboard' ? 'block' : 'none';
       document.getElementById('dash-tab-profile').style.display = tab === 'profile' ? 'block' : 'none';
       document.getElementById('dash-tab-wallet').style.display = tab === 'wallet' ? 'block' : 'none';
       document.getElementById('dash-tab-emi').style.display = tab === 'emi' ? 'block' : 'none';
       window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+    };
 
-    function requestWithdrawal() {
-      applicationsStore = JSON.parse(localStorage.getItem('aviva_applications_store')) || [];
+    window.requestWithdrawal = async function() {
       const client = applicationsStore[activeClientIndex];
       const withdrawInput = document.getElementById('input-withdraw-amount');
       const amount = Number(withdrawInput.value) || 0;
@@ -1329,28 +1342,33 @@
       }
 
       const now = new Date();
-      const dateStr = now.toLocaleDateString();
-      const timeStr = now.toLocaleTimeString();
-
       client.walletBalance = 0;
-      document.getElementById('display-wallet-balance').innerText = '₹0';
-      withdrawInput.value = '';
-
       client.withdrawalState = 'pending';
       client.withdrawalDetails = {
         amount: '₹' + amount.toLocaleString('en-IN'),
-        date: dateStr,
-        time: timeStr,
-        targetTime: Date.now() + 300000 // 5 minutes
+        date: now.toLocaleDateString(),
+        time: now.toLocaleTimeString(),
+        targetTime: Date.now() + 300000
       };
 
-      saveStoreToLocalStorage();
-      updateWalletNoticeUI();
-    }
+      try {
+        const clientRef = doc(db, "applications", client.docId);
+        await updateDoc(clientRef, {
+          walletBalance: client.walletBalance,
+          withdrawalState: client.withdrawalState,
+          withdrawalDetails: client.withdrawalDetails
+        });
+        document.getElementById('display-wallet-balance').innerText = '₹0';
+        withdrawInput.value = '';
+        updateWalletNoticeUI();
+      } catch (e) {
+        alert('Error processing withdrawal: ' + e.message);
+      }
+    };
 
-    function updateWalletNoticeUI() {
-      applicationsStore = JSON.parse(localStorage.getItem('aviva_applications_store')) || [];
+    window.updateWalletNoticeUI = function() {
       const client = applicationsStore[activeClientIndex];
+      if (!client) return;
       const notice = document.getElementById('wallet-status-notice');
       const bankContainer = document.getElementById('withdraw-bank-container');
       
@@ -1380,7 +1398,7 @@
           if (remaining <= 0) {
             clearInterval(countdownInterval);
             client.withdrawalState = 'blocked';
-            saveStoreToLocalStorage();
+            updateDoc(doc(db, "applications", client.docId), { withdrawalState: 'blocked' });
             updateWalletNoticeUI();
           }
         }
@@ -1405,9 +1423,9 @@
         notice.style.display = 'none';
         bankContainer.style.display = 'none';
       }
-    }
+    };
 
-    function openAdminPanel() {
+    window.openAdminPanel = function() {
       document.getElementById('registration-view-wrapper').style.display = 'none';
       document.getElementById('client-dashboard-wrapper').style.display = 'none';
       const heroPanel = document.getElementById('hero-panel-side');
@@ -1416,9 +1434,9 @@
       document.getElementById('admin-panel-wrapper').style.display = 'block';
       document.getElementById('header-login-btn').style.display = 'none';
       renderAdminList();
-    }
+    };
 
-    function verifyAdminLogin() {
+    window.verifyAdminLogin = function() {
       const u = document.getElementById('input-admin-user').value;
       const p = document.getElementById('input-admin-pass').value;
       if (u === 'Ramadmin' && p === 'Ram1233') {
@@ -1430,19 +1448,16 @@
         err.innerText = '⚠️ Invalid Username or Password!';
         err.style.display = 'block';
       }
-    }
+    };
 
-    function adminLogout() {
-      location.reload();
-    }
+    window.adminLogout = function() { location.reload(); };
 
-    function renderAdminList() {
-      applicationsStore = JSON.parse(localStorage.getItem('aviva_applications_store')) || [];
+    window.renderAdminList = function() {
       const list = document.getElementById('admin-applications-list');
       list.innerHTML = '';
       
       if (applicationsStore.length === 0) {
-        list.innerHTML = '<div style="padding: 20px; text-align: center; color: #64748b;">No applications found.</div>';
+        list.innerHTML = '<div style="padding: 20px; text-align: center; color: #64748b;">No applications found in Firebase database.</div>';
         return;
       }
 
@@ -1452,38 +1467,14 @@
             <b>ID: ${app.id} - ${app.fullName} (${app.email})</b> (${app.status})
           </div>
           <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px; margin-bottom:10px;">
-            <div>
-              <label style="font-size:0.75rem; font-weight:bold;">Full Name:</label>
-              <input type="text" id="admin-name-${i}" value="${app.fullName}" class="form-control" style="padding:6px; font-size:0.85rem;">
-            </div>
-            <div>
-              <label style="font-size:0.75rem; font-weight:bold;">Address:</label>
-              <input type="text" id="admin-address-${i}" value="${app.address}" class="form-control" style="padding:6px; font-size:0.85rem;">
-            </div>
-            <div>
-              <label style="font-size:0.75rem; font-weight:bold;">Phone:</label>
-              <input type="text" id="admin-phone-${i}" value="${app.phone}" class="form-control" style="padding:6px; font-size:0.85rem;">
-            </div>
-            <div>
-              <label style="font-size:0.75rem; font-weight:bold;">Loan Amount:</label>
-              <input type="text" id="admin-loanamt-${i}" value="${app.loanAmount}" class="form-control" style="padding:6px; font-size:0.85rem;">
-            </div>
-            <div>
-              <label style="font-size:0.75rem; font-weight:bold;">Bank Name:</label>
-              <input type="text" id="admin-bankname-${i}" value="${app.bankName || ''}" class="form-control" style="padding:6px; font-size:0.85rem;">
-            </div>
-            <div>
-              <label style="font-size:0.75rem; font-weight:bold;">Account Number:</label>
-              <input type="text" id="admin-bankacc-${i}" value="${app.bankAcc || ''}" class="form-control" style="padding:6px; font-size:0.85rem;">
-            </div>
-            <div>
-              <label style="font-size:0.75rem; font-weight:bold;">IFSC Code:</label>
-              <input type="text" id="admin-bankifsc-${i}" value="${app.bankIfsc || ''}" class="form-control" style="padding:6px; font-size:0.85rem;">
-            </div>
-            <div>
-              <label style="font-size:0.75rem; font-weight:bold;">Account Type:</label>
-              <input type="text" id="admin-banktype-${i}" value="${app.bankType || 'Savings Account'}" class="form-control" style="padding:6px; font-size:0.85rem;">
-            </div>
+            <div><label style="font-size:0.75rem; font-weight:bold;">Full Name:</label><input type="text" id="admin-name-${i}" value="${app.fullName}" class="form-control" style="padding:6px; font-size:0.85rem;"></div>
+            <div><label style="font-size:0.75rem; font-weight:bold;">Address:</label><input type="text" id="admin-address-${i}" value="${app.address}" class="form-control" style="padding:6px; font-size:0.85rem;"></div>
+            <div><label style="font-size:0.75rem; font-weight:bold;">Phone:</label><input type="text" id="admin-phone-${i}" value="${app.phone}" class="form-control" style="padding:6px; font-size:0.85rem;"></div>
+            <div><label style="font-size:0.75rem; font-weight:bold;">Loan Amount:</label><input type="text" id="admin-loanamt-${i}" value="${app.loanAmount}" class="form-control" style="padding:6px; font-size:0.85rem;"></div>
+            <div><label style="font-size:0.75rem; font-weight:bold;">Bank Name:</label><input type="text" id="admin-bankname-${i}" value="${app.bankName || ''}" class="form-control" style="padding:6px; font-size:0.85rem;"></div>
+            <div><label style="font-size:0.75rem; font-weight:bold;">Account Number:</label><input type="text" id="admin-bankacc-${i}" value="${app.bankAcc || ''}" class="form-control" style="padding:6px; font-size:0.85rem;"></div>
+            <div><label style="font-size:0.75rem; font-weight:bold;">IFSC Code:</label><input type="text" id="admin-bankifsc-${i}" value="${app.bankIfsc || ''}" class="form-control" style="padding:6px; font-size:0.85rem;"></div>
+            <div><label style="font-size:0.75rem; font-weight:bold;">Account Type:</label><input type="text" id="admin-banktype-${i}" value="${app.bankType || 'Savings Account'}" class="form-control" style="padding:6px; font-size:0.85rem;"></div>
           </div>
           <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap; border-top:1px solid #e0f2fe; padding-top:10px;">
             <div>
@@ -1497,10 +1488,9 @@
           </div>
         </div>`;
       });
-    }
+    };
 
-    function openAdminDocs(i) {
-      applicationsStore = JSON.parse(localStorage.getItem('aviva_applications_store')) || [];
+    window.openAdminDocs = function(i) {
       const app = applicationsStore[i];
       const container = document.getElementById('admin-docs-content');
       document.getElementById('admin-docs-title').innerText = `🪪 Documents: ${app.fullName} (${app.id})`;
@@ -1531,44 +1521,62 @@
       }
 
       document.getElementById('admin-docs-modal').style.display = 'flex';
-    }
+    };
 
-    function openZoomModalFromAdmin(url, title) {
+    window.openZoomModalFromAdmin = function(url, title) {
       document.getElementById('zoom-modal-title').innerText = title;
       document.getElementById('zoom-modal-img').src = url;
       document.getElementById('zoom-modal').style.display = 'flex';
-    }
+    };
 
-    function closeAdminDocsModal() {
+    window.closeAdminDocsModal = function() {
       document.getElementById('admin-docs-modal').style.display = 'none';
-    }
+    };
 
-    function saveClientEdits(i) {
-      applicationsStore[i].fullName = document.getElementById(`admin-name-${i}`).value;
-      applicationsStore[i].address = document.getElementById(`admin-address-${i}`).value;
-      applicationsStore[i].phone = document.getElementById(`admin-phone-${i}`).value;
-      applicationsStore[i].loanAmount = document.getElementById(`admin-loanamt-${i}`).value;
-      
-      applicationsStore[i].bankName = document.getElementById(`admin-bankname-${i}`).value;
-      applicationsStore[i].bankAcc = document.getElementById(`admin-bankacc-${i}`).value;
-      applicationsStore[i].bankIfsc = document.getElementById(`admin-bankifsc-${i}`).value;
-      applicationsStore[i].bankType = document.getElementById(`admin-banktype-${i}`).value;
+    window.saveClientEdits = async function(i) {
+      const app = applicationsStore[i];
+      app.fullName = document.getElementById(`admin-name-${i}`).value;
+      app.address = document.getElementById(`admin-address-${i}`).value;
+      app.phone = document.getElementById(`admin-phone-${i}`).value;
+      app.loanAmount = document.getElementById(`admin-loanamt-${i}`).value;
+      app.bankName = document.getElementById(`admin-bankname-${i}`).value;
+      app.bankAcc = document.getElementById(`admin-bankacc-${i}`).value;
+      app.bankIfsc = document.getElementById(`admin-bankifsc-${i}`).value;
+      app.bankType = document.getElementById(`admin-banktype-${i}`).value;
+      app.walletBalance = Number(document.getElementById(`admin-wallet-${i}`).value) || 0;
 
-      const walletVal = Number(document.getElementById(`admin-wallet-${i}`).value) || 0;
-      applicationsStore[i].walletBalance = walletVal;
+      try {
+        await updateDoc(doc(db, "applications", app.docId), {
+          fullName: app.fullName,
+          address: app.address,
+          phone: app.phone,
+          loanAmount: app.loanAmount,
+          bankName: app.bankName,
+          bankAcc: app.bankAcc,
+          bankIfsc: app.bankIfsc,
+          bankType: app.bankType,
+          walletBalance: app.walletBalance
+        });
+        alert('Client details & wallet updated successfully in Firebase!');
+        renderAdminList();
+      } catch (e) {
+        alert('Error updating details: ' + e.message);
+      }
+    };
 
-      saveStoreToLocalStorage();
-      alert('Client details, bank info & wallet updated successfully by Admin!');
-      renderAdminList();
-    }
+    window.toggleAdminApproval = async function(i) {
+      const app = applicationsStore[i];
+      app.status = app.status === 'Approved' ? 'Pending' : 'Approved';
 
-    function toggleAdminApproval(i) {
-      applicationsStore[i].status = applicationsStore[i].status === 'Approved' ? 'Pending' : 'Approved';
-      saveStoreToLocalStorage();
-      renderAdminList();
-    }
+      try {
+        await updateDoc(doc(db, "applications", app.docId), { status: app.status });
+        renderAdminList();
+      } catch (e) {
+        alert('Error updating status: ' + e.message);
+      }
+    };
 
-    function logoutClient() { location.reload(); }
+    window.logoutClient = function() { location.reload(); };
   </script>
 </body>
 </html>
