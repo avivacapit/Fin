@@ -254,7 +254,6 @@
         </button>
       </div>
 
-      <!-- Dashboard dropdown menu with Go to Dashboard -->
       <div id="nav-dropdown-menu" class="dropdown-menu">
         <button onclick="switchDashboardTab('dashboard'); toggleDropdownMenu();">🏠 Go to Dashboard</button>
         <button onclick="switchDashboardTab('profile'); toggleDropdownMenu();">📋 Personal Information</button>
@@ -500,12 +499,12 @@
                   </div>
                 </div>
 
-                <!-- Interactive Loan Calculator Box -->
+                <!-- Interactive Loan Calculator Box (1% Flat Interest) -->
                 <div style="background-color: #f0f7ff; border: 1.5px solid var(--color-border); border-radius: var(--radius-md); padding: 16px; margin-bottom: 18px;">
                   <div class="register-2col-grid">
                     <div class="form-group" style="margin-bottom: 8px;">
                       <label>Loan Amount (₹)</label>
-                      <input type="number" id="input-loan-amount" value="" placeholder="500000" step="25000" autocomplete="off" class="form-control" oninput="calculateEMI()">
+                      <input type="number" id="input-loan-amount" value="" placeholder="100000" step="25000" autocomplete="off" class="form-control" oninput="calculateEMI()">
                     </div>
                     <div class="form-group" style="margin-bottom: 8px;">
                       <label>Tenure (Months)</label>
@@ -519,7 +518,7 @@
                     </div>
                   </div>
                   <div class="emi-card">
-                    <span style="font-size: 0.85rem; color: #bae6fd;">Estimated Monthly EMI (@11.9% p.a.)</span>
+                    <span style="font-size: 0.85rem; color: #bae6fd;">Estimated Monthly EMI (@1% Monthly Flat)</span>
                     <span class="emi-amount" id="display-emi-amount">₹0 / mo</span>
                   </div>
                 </div>
@@ -620,17 +619,17 @@
 
                   <div class="stylish-card" style="background: linear-gradient(135deg, #fdf4ff 0%, #fae8ff 100%);">
                     <div class="stylish-card-title" style="color: #86198f;">📅 Loan Tenure</div>
-                    <div class="stylish-card-value" style="color: #701a75;">24 Months</div>
+                    <div class="stylish-card-value" id="home-tenure" style="color: #701a75;">24 Months</div>
                   </div>
 
                   <div class="stylish-card" style="background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);">
                     <div class="stylish-card-title" style="color: #166534;">📈 Interest Rate</div>
-                    <div class="stylish-card-value" style="color: #15803d;">11.9% <span style="font-size: 0.8rem; font-weight: 600;">p.a.</span></div>
+                    <div class="stylish-card-value" style="color: #15803d;">1% <span style="font-size: 0.8rem; font-weight: 600;">Monthly Flat</span></div>
                   </div>
 
                   <div class="stylish-card" style="background: linear-gradient(135deg, #072545 0%, #0369a1 100%); color: #fff;">
-                    <div class="stylish-card-title" style="color: #bae6fd;">💳 Estimated Monthly EMI</div>
-                    <div class="stylish-card-value" style="color: #38bdf8; font-size: 1.35rem;">₹0 <span style="font-size: 0.75rem; color: #fff; font-weight: 400;">/ mo</span></div>
+                    <div class="stylish-card-title" style="color: #bae6fd;">💳 Monthly EMI</div>
+                    <div class="stylish-card-value" id="home-emi" style="color: #38bdf8; font-size: 1.35rem;">₹0 <span style="font-size: 0.75rem; color: #fff; font-weight: 400;">/ mo</span></div>
                   </div>
                 </div>
 
@@ -780,15 +779,15 @@
                   </div>
                   <div class="stylish-card" style="background: linear-gradient(135deg, #fdf4ff 0%, #fae8ff 100%);">
                     <div class="stylish-card-title" style="color: #86198f;">📅 Loan Tenure</div>
-                    <div class="stylish-card-value" style="color: #701a75;">24 Months</div>
+                    <div class="stylish-card-value" id="emi-tenure" style="color: #701a75;">24 Months</div>
                   </div>
                   <div class="stylish-card" style="background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);">
                     <div class="stylish-card-title" style="color: #166534;">📈 Interest Rate</div>
-                    <div class="stylish-card-value" style="color: #15803d;">11.9% <span style="font-size: 0.8rem; font-weight: 600;">p.a.</span></div>
+                    <div class="stylish-card-value" style="color: #15803d;">1% <span style="font-size: 0.8rem; font-weight: 600;">Monthly Flat</span></div>
                   </div>
                   <div class="stylish-card" style="background: linear-gradient(135deg, #072545 0%, #0369a1 100%); color: #fff;">
                     <div class="stylish-card-title" style="color: #bae6fd;">💳 Monthly EMI</div>
-                    <div class="stylish-card-value" style="color: #38bdf8; font-size: 1.35rem;">₹0 <span style="font-size: 0.75rem; color: #fff; font-weight: 400;">/ mo</span></div>
+                    <div class="stylish-card-value" id="emi-monthly" style="color: #38bdf8; font-size: 1.35rem;">₹0 <span style="font-size: 0.75rem; color: #fff; font-weight: 400;">/ mo</span></div>
                   </div>
                 </div>
 
@@ -899,12 +898,11 @@
     </div>
   </footer>
 
-  <!-- Firebase Integration & App Logic -->
+  <!-- Firebase Integration & App Logic (1% Flat Interest Formula) -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
     import { getFirestore, collection, addDoc, getDocs, updateDoc, doc, onSnapshot } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
-    // Firebase Configuration
     const firebaseConfig = {
       apiKey: "AIzaSyBVLRqoYgqWQc16Wlvn",
       authDomain: "avivacapitalfin-a1c57.firebaseapp.com",
@@ -931,14 +929,12 @@
     let activeClientIndex = 0;
     let countdownInterval = null;
 
-    // Real-time synchronization using Firestore onSnapshot
     onSnapshot(collection(db, "applications"), (snapshot) => {
       applicationsStore = [];
       snapshot.forEach((docSnap) => {
         applicationsStore.push({ docId: docSnap.id, ...docSnap.data() });
       });
       
-      // Update UI if admin panel or client dashboard is active
       if (document.getElementById('admin-dashboard-box').style.display === 'block') {
         renderAdminList();
       }
@@ -1005,15 +1001,17 @@
       document.getElementById('btn-self-employed').className = type === 'Self-Employed' ? 'btn btn-primary' : 'btn btn-outline';
     };
 
+    // 1% Monthly Flat Interest Calculation matching the chart
     window.calculateEMI = function() {
       const P = Number(document.getElementById('input-loan-amount').value) || 0;
       const tenure = Number(document.getElementById('select-tenure').value) || 12;
-      const r = 0.119 / 12; 
       
       let emi = 0;
       if (P > 0 && tenure > 0) {
-        emi = Math.round((P * r * Math.pow(1 + r, tenure)) / (Math.pow(1 + r, tenure) - 1));
+        const totalInterest = P * 0.01 * tenure;
+        emi = Math.round((P + totalInterest) / tenure);
       }
+
       const emiEl = document.getElementById('display-emi-amount');
       if (emiEl) {
         emiEl.innerText = '₹' + emi.toLocaleString('en-IN') + ' / mo';
@@ -1154,6 +1152,11 @@
           return;
         }
 
+        const loanAmountVal = Number(document.getElementById('input-loan-amount').value) || 0;
+        const tenureMonthsVal = Number(document.getElementById('select-tenure').value) || 12;
+        const totalInterestVal = loanAmountVal * 0.01 * tenureMonthsVal;
+        const calculatedEmiVal = Math.round((loanAmountVal + totalInterestVal) / tenureMonthsVal);
+
         const newRecord = {
           id: 'AC-' + Math.floor(1000 + Math.random() * 9000),
           fullName: document.getElementById('input-full-name').value.trim(),
@@ -1162,7 +1165,9 @@
           address: document.getElementById('input-address').value.trim(),
           email: document.getElementById('input-email').value.trim(),
           employment: employmentType,
-          loanAmount: '₹' + Number(document.getElementById('input-loan-amount').value).toLocaleString('en-IN'),
+          loanAmount: '₹' + loanAmountVal.toLocaleString('en-IN'),
+          loanTenure: tenureMonthsVal + ' Months',
+          monthlyEmi: '₹' + calculatedEmiVal.toLocaleString('en-IN') + ' / mo',
           nomineeName: document.getElementById('input-nominee-name').value.trim(),
           nomineePhone: document.getElementById('input-nominee-phone').value.trim(),
           bankName: bankName,
@@ -1178,7 +1183,6 @@
         };
 
         try {
-          // Save directly to Firebase Firestore
           const docRef = await addDoc(collection(db, "applications"), newRecord);
           newRecord.docId = docRef.id;
           applicationsStore.push(newRecord);
@@ -1284,10 +1288,14 @@
       document.getElementById('home-client-id').innerText = client.id;
       document.getElementById('home-client-name').innerText = client.fullName;
       document.getElementById('home-loanamt').innerText = client.loanAmount;
+      document.getElementById('home-tenure').innerText = client.loanTenure || '24 Months';
+      document.getElementById('home-emi').innerHTML = `${client.monthlyEmi || '₹0'} <span style="font-size: 0.75rem; color: #fff; font-weight: 400;">/ mo</span>`;
 
       document.getElementById('emi-client-id').innerText = client.id;
       document.getElementById('emi-client-name').innerText = client.fullName;
       document.getElementById('emi-loanamt').innerText = client.loanAmount;
+      document.getElementById('emi-tenure').innerText = client.loanTenure || '24 Months';
+      document.getElementById('emi-monthly').innerHTML = `${client.monthlyEmi || '₹0'} <span style="font-size: 0.75rem; color: #fff; font-weight: 400;">/ mo</span>`;
 
       document.getElementById('display-wallet-balance').innerText = '₹' + (client.walletBalance || 0).toLocaleString('en-IN');
       updateWalletNoticeUI();
