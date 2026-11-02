@@ -54,7 +54,6 @@
 
     .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
-    /* Top utility bar */
     .top-bar {
       background-color: #e0f2fe;
       padding: 6px 0;
@@ -64,7 +63,6 @@
     .top-bar-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
     .top-bar-badge { color: var(--color-primary); font-weight: 700; display: flex; align-items: center; gap: 6px; }
 
-    /* Header */
     header {
       background-color: #ffffff;
       color: var(--color-primary);
@@ -102,7 +100,6 @@
     .btn-outline { border: 1.5px solid var(--color-border); color: var(--color-primary); background-color: #fff; }
     .btn-outline:hover { border-color: var(--color-primary); background-color: var(--color-surface-low); transform: translateY(-2px); }
 
-    /* Layout */
     .register-wrapper { background-color: var(--color-bg); flex: 1; padding: 40px 0 60px; }
     .register-container-card {
       background: #ffffff; border-radius: var(--radius-lg);
@@ -110,7 +107,6 @@
       overflow: hidden; display: grid; grid-template-columns: 360px 1fr;
     }
 
-    /* Hero Left Sidebar */
     .register-hero-panel {
       background: linear-gradient(165deg, #072545 0%, #0369a1 60%, #0284c7 100%);
       color: #ffffff; padding: 36px 28px; display: flex; flex-direction: column; justify-content: space-between; position: relative;
@@ -127,7 +123,6 @@
     }
     .checklist-step.active .step-bubble { background: var(--color-sky); color: #072545; }
 
-    /* Form Right Panel */
     .register-form-panel { padding: 36px 40px; background: #ffffff; }
     .form-group { margin-bottom: 18px; }
     .form-group label { display: block; font-size: 0.82rem; font-weight: 800; color: #0f172a; margin-bottom: 6px; }
@@ -139,7 +134,6 @@
     .form-control:focus { border-color: var(--color-primary); background-color: #ffffff; box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.25); }
     .register-2col-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 
-    /* Upload zone styling */
     .upload-box {
       border: 1.5px dashed var(--color-border); border-radius: var(--radius-md); padding: 12px;
       background-color: var(--color-surface-low); display: flex; flex-direction: column; justify-content: space-between;
@@ -147,7 +141,6 @@
     }
     .upload-box.uploaded { border-color: #0284c7; background-color: #f0f9ff; }
 
-    /* Loan / EMI Card */
     .emi-card {
       background: linear-gradient(135deg, #072545 0%, #0369a1 100%); color: #ffffff;
       border-radius: var(--radius-md); padding: 16px 20px; display: flex; justify-content: space-between;
@@ -166,7 +159,6 @@
     .dropdown-menu button { background: none; border: none; padding: 12px 16px; text-align: left; font-family: inherit; font-weight: 700; font-size: 0.85rem; color: var(--color-text-main); cursor: pointer; border-bottom: 1px solid #f1f5f9; transition: background 0.2s; }
     .dropdown-menu button:hover { background: #f0f9ff; color: var(--color-primary); }
 
-    /* Modals */
     .modal-overlay {
       position: fixed; top: 0; left: 0; right: 0; bottom: 0;
       background: rgba(7, 37, 69, 0.7); backdrop-filter: blur(4px); z-index: 2000;
@@ -175,10 +167,8 @@
     .modal-card { background: #ffffff; border-radius: var(--radius-md); max-width: 600px; width: 100%; overflow: hidden; box-shadow: var(--shadow-lg); }
     .modal-header { background: #072545; color: #fff; padding: 14px 20px; display: flex; justify-content: space-between; align-items: center; }
 
-    /* Footer */
     footer { background-color: #072545; color: #ffffff; padding: 56px 0 28px; border-top: 4px solid var(--color-sky); font-size: 0.85rem; }
 
-    /* Stylish Cards Grid */
     .stylish-emi-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -224,7 +214,6 @@
 </head>
 <body>
 
-  <!-- Top bar -->
   <div class="top-bar">
     <div class="container top-bar-inner">
       <div class="top-bar-badge">
@@ -237,7 +226,6 @@
     </div>
   </div>
 
-  <!-- Header -->
   <header>
     <div class="container header-inner">
       <a href="#" class="brand-logo-group">
@@ -264,12 +252,10 @@
     </div>
   </header>
 
-  <!-- Register Main Container -->
   <main class="register-wrapper">
     <div class="container">
       <div class="register-container-card" id="main-portal-card">
 
-        <!-- Left Hero Panel -->
         <div class="register-hero-panel" id="hero-panel-side">
           <div>
             <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
@@ -319,10 +305,8 @@
           </div>
         </div>
 
-        <!-- Right Panel Container -->
         <div class="register-form-panel" id="right-panel-container">
           
-          <!-- REGISTRATION VIEW WRAPPER -->
           <div id="registration-view-wrapper">
             <div style="margin-bottom: 18px;">
               <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; flex-wrap: wrap; gap: 8px;">
@@ -332,15 +316,12 @@
               <p id="step-desc-display" style="color: var(--color-text-muted); font-size: 0.88rem;">Enter the client's basic contact details to get started.</p>
             </div>
 
-            <!-- Progress bar -->
             <div style="width: 100%; height: 6px; background-color: var(--color-border-light); border-radius: var(--radius-full); margin-bottom: 24px; overflow: hidden;">
               <div id="progress-bar-inner" style="height: 100%; width: 33.33%; background-color: var(--color-primary); transition: width 0.3s ease;"></div>
             </div>
 
-            <!-- Error Alert -->
             <div id="form-error-alert" style="display: none; background-color: #fee2e2; color: #b91c1c; border: 1px solid #f87171; border-radius: var(--radius-sm); padding: 10px 14px; margin-bottom: 18px; font-size: 0.85rem; font-weight: 600;"></div>
 
-            <!-- Success Screen -->
             <div id="registration-success-card" style="display: none; background-color: #f0fdf4; border: 1.5px solid #22c55e; border-radius: var(--radius-md); padding: 32px 20px; text-align: center;">
               <div style="font-size: 52px; color: #16a34a; margin-bottom: 12px;">✓</div>
               <h4 style="font-size: 1.4rem; color: #15803d; font-weight: 900; margin-bottom: 8px;">Registration Completed!</h4>
@@ -351,10 +332,8 @@
               </div>
             </div>
 
-            <!-- Form Element -->
             <form id="registration-form" autocomplete="off" onsubmit="event.preventDefault();">
 
-              <!-- STEP 1: Contact Details -->
               <div id="step-1-container">
                 <div class="form-group">
                   <label>👤 Full Legal Name *</label>
@@ -380,12 +359,10 @@
                 <button type="button" onclick="handleNextStep()" class="btn btn-primary" style="width: 100%; padding: 14px;">Continue to Step 2 (KYC & Nominee) →</button>
               </div>
 
-              <!-- STEP 2: KYC & Nominee Uploads -->
               <div id="step-2-container" style="display: none;">
                 <h3 style="font-size: 0.98rem; font-weight: 800; color: var(--color-primary); margin-bottom: 12px;">🪪 Client Identity Uploads</h3>
                 
                 <div class="register-2col-grid" style="margin-bottom: 14px;">
-                  <!-- Aadhaar Front -->
                   <div class="upload-box" id="box-aadharFront" style="position: relative; padding: 14px; text-align: center; background: #f0f9ff; border: 1.5px dashed #bae6fd; border-radius: 8px; margin-bottom: 12px; overflow: hidden;">
                     <div style="font-size: 0.8rem; font-weight: 800; color: #0369a1; margin-bottom: 6px;">Aadhaar Front *</div>
                     <span id="tag-aadharFront" style="display: none; font-size: 0.65rem; background-color: #e0f2fe; color: #0284c7; padding: 2px 6px; border-radius: 4px; font-weight: 800;">✓ Ready</span>
@@ -403,7 +380,6 @@
                     <input type="file" id="file-aadharFront" accept="image/*" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; z-index: 2;" onchange="processImageUpload(event, 'aadharFront')">
                   </div>
 
-                  <!-- Aadhaar Back -->
                   <div class="upload-box" id="box-aadharBack" onclick="triggerFileInput('file-aadharBack')">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
                       <span style="font-size: 0.78rem; font-weight: 700;">Aadhaar Back *</span>
@@ -426,7 +402,6 @@
                   </div>
                 </div>
 
-                <!-- Client Photo Upload -->
                 <div class="upload-box" id="box-photo" style="margin-bottom: 18px; min-height: 90px;" onclick="triggerFileInput('file-photo')">
                   <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
                     <span style="font-size: 0.78rem; font-weight: 700;">👤 Client Profile Photo *</span>
@@ -443,7 +418,6 @@
                   <input type="file" id="file-photo" accept="image/*" style="display: none;" onchange="processImageUpload(event, 'photo')">
                 </div>
 
-                <!-- Nominee Section -->
                 <div style="background-color: #f0f7ff; border: 1.5px solid var(--color-border); border-radius: var(--radius-md); padding: 14px; margin-bottom: 18px;">
                   <h4 style="font-size: 0.88rem; font-weight: 800; color: var(--color-primary); margin-bottom: 10px;">👥 Nominee Particulars</h4>
                   <div class="register-2col-grid">
@@ -457,7 +431,6 @@
                     </div>
                   </div>
 
-                  <!-- Nominee Aadhaar Upload -->
                   <div class="upload-box" id="box-nomineeAadhar" style="min-height: 85px; margin-top: 6px; margin-bottom: 0;" onclick="triggerFileInput('file-nomineeAadhar')">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
                       <span style="font-size: 0.78rem; font-weight: 700;">Nominee Aadhaar Front *</span>
@@ -481,7 +454,6 @@
                 </div>
               </div>
 
-              <!-- STEP 3: Loan Parameters & Password -->
               <div id="step-3-container" style="display: none;">
                 <h3 style="font-size: 0.98rem; font-weight: 800; color: var(--color-primary); margin-bottom: 12px;">💼 Employment & Facility Requirements</h3>
 
@@ -499,7 +471,6 @@
                   </div>
                 </div>
 
-                <!-- Interactive Loan Calculator Box (1% Flat Interest) -->
                 <div style="background-color: #f0f7ff; border: 1.5px solid var(--color-border); border-radius: var(--radius-md); padding: 16px; margin-bottom: 18px;">
                   <div class="register-2col-grid">
                     <div class="form-group" style="margin-bottom: 8px;">
@@ -523,7 +494,6 @@
                   </div>
                 </div>
 
-                <!-- Bank Details -->
                 <div style="background-color: #f0f7ff; border: 1.5px solid var(--color-border); border-radius: var(--radius-md); padding: 14px; margin-bottom: 18px;">
                   <h4 style="font-size: 0.88rem; font-weight: 800; color: var(--color-primary); margin-bottom: 10px;">🏦 Bank Account Details</h4>
                   <div class="register-2col-grid">
@@ -541,7 +511,6 @@
                   </div>
                 </div>
 
-                <!-- Credentials Setup -->
                 <div style="background-color: #ffffff; border: 1.5px solid var(--color-border); border-radius: var(--radius-md); padding: 16px; margin-bottom: 20px;">
                   <div style="margin-bottom: 10px;">
                     <h4 style="font-size: 0.9rem; font-weight: 800; color: var(--color-primary);">🔐 Portal Credentials Setup</h4>
@@ -571,10 +540,8 @@
             </form>
           </div>
 
-          <!-- CLIENT DASHBOARD WRAPPER -->
           <div id="client-dashboard-wrapper" style="display: none;">
             
-            <!-- Dashboard Home View -->
             <div id="dash-tab-dashboard" style="display: block;">
               <div style="background: linear-gradient(165deg, #072545 0%, #0369a1 60%, #0284c7 100%); color: #ffffff; padding: 36px 28px; border-radius: var(--radius-md); text-align: center; margin-bottom: 20px; box-shadow: 0 10px 25px rgba(2, 132, 199, 0.2);">
                 <div style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 16px;">
@@ -592,7 +559,6 @@
                 </div>
               </div>
 
-              <!-- Modern & Colorful Stylish EMI Cards -->
               <div style="background-color: #ffffff; border: 1.5px solid var(--color-border); border-radius: var(--radius-md); padding: 22px; box-shadow: var(--shadow-md);">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; border-bottom: 2px solid #e0f2fe; padding-bottom: 10px;">
                   <h3 style="font-size: 1.1rem; font-weight: 900; color: var(--color-primary); display: flex; align-items: center; gap: 8px;">
@@ -640,7 +606,6 @@
               </div>
             </div>
 
-            <!-- Tab 1: Personal Information -->
             <div id="dash-tab-profile" style="display: none;">
               <div style="background-color: #ffffff; border: 1.5px solid var(--color-border); border-radius: var(--radius-md); padding: 24px; box-shadow: var(--shadow-md);">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; border-bottom: 2px solid #e0f2fe; padding-bottom: 10px;">
@@ -725,7 +690,6 @@
               </div>
             </div>
 
-            <!-- Tab 2: Wallet -->
             <div id="dash-tab-wallet" style="display: none;">
               <div style="background: linear-gradient(135deg, #072545 0%, #0369a1 100%); color: #fff; border-radius: var(--radius-md); padding: 24px; margin-bottom: 16px; text-align: center; box-shadow: 0 10px 25px rgba(2, 132, 199, 0.2);">
                 <div style="font-size: 0.85rem; color: #bae6fd; margin-bottom: 6px;">Available Wallet Balance</div>
@@ -759,7 +723,6 @@
               </div>
             </div>
 
-            <!-- Tab 3: EMI Details -->
             <div id="dash-tab-emi" style="display: none;">
               <div style="background-color: #ffffff; border: 1.5px solid var(--color-border); border-radius: var(--radius-md); padding: 22px; box-shadow: var(--shadow-md);">
                 <h3 style="font-size: 1.1rem; font-weight: 900; color: var(--color-primary); margin-bottom: 16px; border-bottom: 2px solid #e0f2fe; padding-bottom: 10px;">📊 Detailed EMI Schedule</h3>
@@ -799,7 +762,6 @@
             </div>
           </div>
 
-          <!-- ADMIN PANEL WRAPPER -->
           <div id="admin-panel-wrapper" style="display: none;">
             <div id="admin-login-box" style="max-width: 400px; margin: 20px auto; background: #f0f9ff; border: 1.5px solid var(--color-border); border-radius: var(--radius-md); padding: 24px; text-align: center;">
               <h2 style="font-size: 1.3rem; font-weight: 900; color: var(--color-primary); margin-bottom: 6px;">Staff Admin Login</h2>
@@ -823,7 +785,6 @@
     </div>
   </main>
 
-  <!-- Zoom Preview Modal -->
   <div class="modal-overlay" id="zoom-modal" onclick="closeZoomModal(event)">
     <div class="modal-card" onclick="event.stopPropagation()">
       <div class="modal-header">
@@ -836,7 +797,6 @@
     </div>
   </div>
 
-  <!-- CLIENT LOGIN MODAL -->
   <div class="modal-overlay" id="client-login-modal">
     <div class="modal-card" style="max-width: 440px;">
       <div class="modal-header">
@@ -852,7 +812,6 @@
     </div>
   </div>
 
-  <!-- ADMIN DOCUMENTS VIEW MODAL -->
   <div class="modal-overlay" id="admin-docs-modal">
     <div class="modal-card" style="max-width: 650px;">
       <div class="modal-header">
@@ -864,7 +823,6 @@
     </div>
   </div>
 
-  <!-- Footer -->
   <footer>
     <div class="container">
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 36px; margin-bottom: 36px;">
@@ -898,7 +856,6 @@
     </div>
   </footer>
 
-  <!-- Firebase Integration & App Logic (1% Flat Interest Formula) -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
     import { getFirestore, collection, addDoc, getDocs, updateDoc, doc, onSnapshot } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
@@ -1001,7 +958,6 @@
       document.getElementById('btn-self-employed').className = type === 'Self-Employed' ? 'btn btn-primary' : 'btn btn-outline';
     };
 
-    // 1% Monthly Flat Interest Calculation matching the chart
     window.calculateEMI = function() {
       const P = Number(document.getElementById('input-loan-amount').value) || 0;
       const tenure = Number(document.getElementById('select-tenure').value) || 12;
@@ -1285,17 +1241,29 @@
       document.getElementById('info-acc').innerText = client.bankAcc || '-';
       document.getElementById('info-ifsc').innerText = client.bankIfsc || '-';
       
+      let rawAmount = Number(String(client.loanAmount || '0').replace(/[^0-9]/g, '')) || 0;
+      let rawTenure = Number(String(client.loanTenure || '24').replace(/[^0-9]/g, '')) || 24;
+      let calcEmi = client.monthlyEmi;
+      
+      if (!calcEmi || calcEmi === '₹0 / mo' || calcEmi.includes('₹0')) {
+        if (rawAmount > 0 && rawTenure > 0) {
+          const totalInterest = rawAmount * 0.01 * rawTenure;
+          const emiVal = Math.round((rawAmount + totalInterest) / rawTenure);
+          calcEmi = '₹' + emiVal.toLocaleString('en-IN') + ' / mo';
+        }
+      }
+
       document.getElementById('home-client-id').innerText = client.id;
       document.getElementById('home-client-name').innerText = client.fullName;
       document.getElementById('home-loanamt').innerText = client.loanAmount;
       document.getElementById('home-tenure').innerText = client.loanTenure || '24 Months';
-      document.getElementById('home-emi').innerHTML = `${client.monthlyEmi || '₹0'} <span style="font-size: 0.75rem; color: #fff; font-weight: 400;">/ mo</span>`;
+      document.getElementById('home-emi').innerHTML = `${calcEmi} <span style="font-size: 0.75rem; color: #fff; font-weight: 400;">/ mo</span>`;
 
       document.getElementById('emi-client-id').innerText = client.id;
       document.getElementById('emi-client-name').innerText = client.fullName;
       document.getElementById('emi-loanamt').innerText = client.loanAmount;
       document.getElementById('emi-tenure').innerText = client.loanTenure || '24 Months';
-      document.getElementById('emi-monthly').innerHTML = `${client.monthlyEmi || '₹0'} <span style="font-size: 0.75rem; color: #fff; font-weight: 400;">/ mo</span>`;
+      document.getElementById('emi-monthly').innerHTML = `${calcEmi} <span style="font-size: 0.75rem; color: #fff; font-weight: 400;">/ mo</span>`;
 
       document.getElementById('display-wallet-balance').innerText = '₹' + (client.walletBalance || 0).toLocaleString('en-IN');
       updateWalletNoticeUI();
