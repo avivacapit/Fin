@@ -865,14 +865,41 @@
     let activeClientIndex = 0;
     let countdownInterval = null;
 
-    // Load applications from localStorage (MongoDB Synchronized Backup)
+    // Load applications from localStorage (MongoDB Synchronized Backup with sample fallback)
     function loadApplicationsFromStorage() {
       try {
         const stored = localStorage.getItem('aviva_mongodb_applications');
         if (stored) {
           applicationsStore = JSON.parse(stored);
         } else {
-          applicationsStore = [];
+          applicationsStore = [
+            {
+              docId: 'MONGO-DEMO1',
+              id: 'AC-1001',
+              fullName: 'Sample Client',
+              dob: '1995-01-01',
+              phone: '+91 9876543210',
+              address: 'Chennai, India',
+              email: 'client@example.com',
+              employment: 'Salaried',
+              loanAmount: '₹1,00,000',
+              loanTenure: '24 Months',
+              monthlyEmi: '₹4,583 / mo',
+              nomineeName: 'Nominee Name',
+              nomineePhone: '+91 9876543211',
+              bankName: 'HDFC Bank',
+              bankType: 'Savings Account',
+              bankAcc: '1234567890',
+              bankIfsc: 'HDFC0001234',
+              password: 'password123',
+              status: 'Pending',
+              walletBalance: 0,
+              withdrawalState: 'none',
+              withdrawalDetails: null,
+              documents: {}
+            }
+          ];
+          saveApplicationsToStorage();
         }
       } catch(e) {
         applicationsStore = [];
